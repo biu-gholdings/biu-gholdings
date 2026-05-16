@@ -1,6 +1,7 @@
 name: Deploy GitHub Pages
 
-# Publishes production static frontend to gh-pages only (no docs/README/PDFs).
+# Production-safe static deploy: Vite build → verified artifact → official GitHub Pages.
+# Never publishes README, docs/, PDFs, Laravel source, or deploy scripts.
 
 on:
   push:
@@ -8,27 +9,31 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  group: pages-production
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build static frontend
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source (develop/main only)
+        uses: actions/checkout@v4
 
       - name: Block root CNAME on source branches
         run: |
           if [ -f CNAME ]; then
-            echo "::error::Do not commit CNAME on develop/main. It is generated only in gh-pages."
+            echo "::error::Do not commit CNAME on develop/main. It is generated in the Pages artifact only."
             exit 1
           fi
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -37,24 +42,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static corporate frontend
+      - name: Vite production build (static corporate site)
         run: npm run build:pages
+        env:
+          NODE_ENV: production
 
-      - name: Verify artifact excludes internal paths
-        run: |
-          test ! -d dist-pages-publish/docs
-          test ! -f dist-pages-publish/README.md
-          test ! -d dist-pages-publish/deploy
-          test -f dist-pages-publish/.nojekyll
-          test -f dist-pages-publish/index.html
-          test -f dist-pages-publish/404.html
-          test -f dist-pages-publish/CNAME
+      - name: Verify artifact (no docs, PDFs, README, deploy scripts)
+        run: node scripts/verify-pages-artifact.mjs dist-pages-publish
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist-pages-publish
-          publish_branch: gh-pages
-          force_orphan: true
-          commit_message: "Deploy static corporate frontend"
+          path: dist-pages-publish
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to production Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

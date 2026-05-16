@@ -5,6 +5,7 @@
     "scripts": {
         "build": "vite build",
         "build:pages": "vite build --config vite.config.pages.js && node scripts/build-pages.mjs",
+        "verify:pages": "node scripts/verify-pages-artifact.mjs dist-pages-publish",
         "dev": "vite",
         "dev:pages": "vite --config vite.config.pages.js"
     },

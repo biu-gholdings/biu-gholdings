@@ -1,8 +1,9 @@
 # Deployment status
 
 **Last updated:** 2026-05-16  
-**Branches:** `main`, `develop` (source) · `gh-pages` (public static site only)  
-**Public domain:** [biu-gholdings.org](https://biu-gholdings.org)
+**Source branches:** `main`, `develop` (private)  
+**Public domain:** [biu-gholdings.org](https://biu-gholdings.org)  
+**Deploy method:** GitHub Actions → official GitHub Pages (`actions/deploy-pages`)
 
 ---
 
@@ -10,99 +11,95 @@
 
 | Layer | Role |
 |-------|------|
-| **Private repo** (`develop` / `main`) | Laravel source, React pages, internal `docs/`, PDFs, deploy scripts |
-| **`gh-pages` branch** | **Orphan branch** — production static frontend only (built assets + `index.html` + SPA fallback) |
-| **GitHub Pages** | Static CDN for `biu-gholdings.org` (no PHP, no Jekyll) |
-| **Cloudflare** (recommended) | DNS proxy, SSL, WAF in front of GitHub Pages |
+| **Private repo** (`develop` / `main`) | Laravel + Inertia source, `docs/`, internal PDFs, deploy scripts |
+| **GitHub Actions** | `npm run build:pages` → verified artifact → `actions/deploy-pages` |
+| **GitHub Pages** | Static CDN — corporate React frontend only |
+| **Cloudflare** (recommended) | DNS, proxy, WAF, SSL in front of Pages |
 
-Laravel + Inertia remains the **authoring stack** on `develop`/`main`. Public visitors receive a **Vite-built static SPA** (same React pages) deployed automatically to `gh-pages`.
+Public visitors never receive repository markdown, PDFs, or deployment scripts.
 
 ---
 
 ## What is public vs private
 
-| Path | On `gh-pages`? |
-|------|----------------|
-| Built JS/CSS (`assets/`) | Yes |
+| Path | Published? |
+|------|------------|
+| `assets/*` (Vite build) | Yes |
 | `index.html`, `404.html` | Yes |
 | `.nojekyll`, `CNAME` | Yes |
 | `README.md`, `docs/`, `docs/source/*.pdf` | **Never** |
-| `deploy/`, Laravel `app/`, `routes/` | **Never** |
+| `deploy/`, `scripts/`, Laravel `app/` | **Never** |
+
+Enforced by [scripts/build-pages.mjs](scripts/build-pages.mjs) and [scripts/verify-pages-artifact.mjs](scripts/verify-pages-artifact.mjs) in CI.
 
 ---
 
-## Automated deployment
+## Exact GitHub Pages setup steps
 
-**Workflow:** [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
+See **[deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md)** for the full checklist. Summary:
 
-On push to `develop` or `main`:
+1. **Settings → Pages → Source:** **GitHub Actions** (not “Deploy from a branch”).
+2. **Custom domain:** `biu-gholdings.org` — enable **Enforce HTTPS**.
+3. Push to `develop` or run workflow **Deploy GitHub Pages** manually.
+4. Configure **Cloudflare** DNS (proxied) with SSL **Full (strict)**.
 
-1. `npm ci`
-2. `npm run build:pages` — Vite production build (`vite.config.pages.js`) + [scripts/build-pages.mjs](scripts/build-pages.mjs)
-3. Publish `dist-pages-publish/` to **`gh-pages`** (force orphan — branch contains only the artifact)
+Do **not** commit `CNAME` on `develop`/`main` (CI blocks it). `CNAME` is generated only inside the build artifact.
+
+---
+
+## Automated workflow
+
+**File:** [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
+
+| Step | Action |
+|------|--------|
+| 1 | `npm ci` |
+| 2 | `npm run build:pages` — Vite production (`vite.config.pages.js`) |
+| 3 | `node scripts/verify-pages-artifact.mjs` |
+| 4 | `actions/upload-pages-artifact` |
+| 5 | `actions/deploy-pages` → environment `github-pages` |
 
 **Local build:**
 
 ```bash
 npm run build:pages
-# Inspect output: dist-pages-publish/
-```
-
-**Local static preview:**
-
-```bash
-npm run dev:pages
+node scripts/verify-pages-artifact.mjs dist-pages-publish
 ```
 
 ---
 
-## GitHub repository settings (required once)
+## Cloudflare compatibility
 
-1. **Settings → Pages**
-   - **Source:** Deploy from a branch
-   - **Branch:** `gh-pages` / `/ (root)`
-2. **Custom domain:** `biu-gholdings.org` (HTTPS enforced)
-3. Keep repository **Private** (Pages can still serve the public site from `gh-pages`).
+- **CNAME** apex/`www` to GitHub Pages host (see setup doc).
+- **SSL/TLS:** Full (strict).
+- Cache **`/assets/*`** aggressively; avoid long cache on `index.html` / HTML routes.
+- Compatible with GitHub Pages custom domain + enforced HTTPS.
 
-Do **not** commit `CNAME` on `develop` or `main` (CI blocks it). `CNAME` is generated only in the Pages artifact.
-
----
-
-## Cloudflare (recommended)
-
-1. Add site `biu-gholdings.org` to Cloudflare.
-2. DNS: `CNAME` `@` → `<org>.github.io` (or use GitHub Pages A records) — **proxied** (orange cloud).
-3. SSL/TLS: **Full (strict)**.
-4. Optional: cache static assets (`/assets/*`), bypass cache for `index.html` if needed.
-
-See [deploy/DNS-CUTOVER.md](deploy/DNS-CUTOVER.md) when migrating off legacy Jekyll/README Pages.
+Details: [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md) §4.
 
 ---
 
 ## Optional: Laravel Forge / VPS
 
-Full PHP hosting (server-side Inertia, forms, future APIs) is documented in [deploy/](deploy/README.md) and [docs/deployment-guide.md](docs/deployment-guide.md). Use Forge when you need Laravel runtime features beyond the static v1 brochure.
-
-For v1 public marketing site, **GitHub Pages + static build is the primary path**.
+PHP hosting for server-side Inertia is documented in [deploy/README.md](deploy/README.md). The v1 **public marketing site** uses **GitHub Pages static CDN** only.
 
 ---
 
-## CI
+## CI workflows
 
 | Workflow | Purpose |
 |----------|---------|
-| [ci.yml](.github/workflows/ci.yml) | PHPUnit, Laravel Vite build, static Pages build, block root `CNAME` |
-| [deploy-pages.yml](.github/workflows/deploy-pages.yml) | Publish to `gh-pages` |
-| [deploy-production.yml](.github/workflows/deploy-production.yml) | Optional SSH deploy to Forge/VPS |
+| [ci.yml](.github/workflows/ci.yml) | PHPUnit, Laravel + Pages builds, artifact verification |
+| [deploy-pages.yml](.github/workflows/deploy-pages.yml) | Production Pages deploy |
+| [deploy-production.yml](.github/workflows/deploy-production.yml) | Optional SSH / Forge |
 
 ---
 
 ## Verification
 
-After deploy, confirm:
-
-- [https://biu-gholdings.org/](https://biu-gholdings.org/) — React corporate home (not README/Jekyll)
-- [https://biu-gholdings.org/about](https://biu-gholdings.org/about) — EN routes work (via `404.html` SPA fallback)
+- [https://biu-gholdings.org/](https://biu-gholdings.org/) — React corporate home
 - [https://biu-gholdings.org/pt](https://biu-gholdings.org/pt) — PT home
+- EN/PT routes — SPA via `404.html` fallback
 - `/docs/`, `/README.md`, `*.pdf` — **404** on public host
-- [deploy/POST-DEPLOY-CHECKLIST.md](deploy/POST-DEPLOY-CHECKLIST.md)
+
+[deploy/POST-DEPLOY-CHECKLIST.md](deploy/POST-DEPLOY-CHECKLIST.md)

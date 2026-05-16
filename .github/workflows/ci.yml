@@ -45,5 +45,8 @@ jobs:
       - name: Build static Pages artifact
         run: npm run build:pages
 
+      - name: Verify Pages artifact safety
+        run: node scripts/verify-pages-artifact.mjs dist-pages-publish
+
       - name: Run tests
         run: php artisan test

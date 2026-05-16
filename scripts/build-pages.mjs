@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
  * Prepare GitHub Pages artifact: production static frontend only.
- * Output: dist-pages-publish/ (consumed by deploy-pages workflow → gh-pages branch)
+ * Output: dist-pages-publish/ (consumed by GitHub Actions deploy-pages workflow)
  */
 
+import { spawnSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -33,6 +34,14 @@ writeFileSync(join(publishDir, 'index.html'), indexHtml);
 writeFileSync(join(publishDir, '404.html'), indexHtml);
 writeFileSync(join(publishDir, '.nojekyll'), '\n');
 writeFileSync(join(publishDir, 'CNAME'), `${domain}\n`);
+
+const verify = spawnSync('node', ['scripts/verify-pages-artifact.mjs', publishDir], {
+    stdio: 'inherit',
+});
+
+if (verify.status !== 0) {
+    process.exit(verify.status ?? 1);
+}
 
 console.log(`Pages artifact ready in ${publishDir}/`);
 console.log('Included: assets/, index.html, 404.html, .nojekyll, CNAME');

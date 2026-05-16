@@ -2,7 +2,7 @@
 
 Institutional, static-first corporate site for **biu-gholdings.org**: bilingual (EN/PT), regulator-oriented, minimal.
 
-> **Deployment:** Public site **biu-gholdings.org** is built from `npm run build:pages` and published to the **`gh-pages`** branch (static React frontend only). Laravel source and `docs/` stay on `develop`/`main`. See [DEPLOYMENT_STATUS.md](DEPLOYMENT_STATUS.md). Optional PHP hosting: [deploy/](deploy/README.md).
+> **Deployment:** Public site **biu-gholdings.org** is deployed via **GitHub Actions Pages** (`npm run build:pages` → verified static artifact only). Laravel source and `docs/` stay private on `develop`/`main`. Setup: [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md) · [DEPLOYMENT_STATUS.md](DEPLOYMENT_STATUS.md).
 
 ## Overview
 
