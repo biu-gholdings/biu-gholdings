@@ -1,5 +1,4 @@
-import { Link, usePage } from '@inertiajs/react';
-import { route as ziggyRoute } from 'ziggy-js';
+import { SiteLink, useSite } from '@/lib/site';
 
 const PAGE_LOCALE_ROUTE_MAP = {
     Home: { en: 'home', pt: 'home.pt' },
@@ -19,25 +18,19 @@ const PAGE_LOCALE_ROUTE_MAP = {
 };
 
 export default function LanguageToggle() {
-    const { component: rawComponent, props } = usePage();
-    const ziggy = props.ziggy;
-    const component = typeof rawComponent === 'string' && rawComponent.includes('/')
-        ? rawComponent.split('/').pop()
-        : rawComponent;
-    const cfg = PAGE_LOCALE_ROUTE_MAP[component];
+    const { pageComponent } = useSite();
+    const cfg = PAGE_LOCALE_ROUTE_MAP[pageComponent];
 
-    if (!cfg || !ziggy) {
+    if (!cfg) {
         return null;
     }
 
-    const isPt = component.endsWith('Pt');
-    const enHref = ziggyRoute(cfg.en, {}, false, ziggy);
-    const ptHref = ziggyRoute(cfg.pt, {}, false, ziggy);
+    const isPt = pageComponent.endsWith('Pt');
 
     return (
         <div className="flex items-center gap-2 text-xs md:text-sm">
-            <Link
-                href={enHref}
+            <SiteLink
+                routeName={cfg.en}
                 className={
                     'rounded-full border px-2 py-1 transition ' +
                     (!isPt
@@ -46,9 +39,9 @@ export default function LanguageToggle() {
                 }
             >
                 EN
-            </Link>
-            <Link
-                href={ptHref}
+            </SiteLink>
+            <SiteLink
+                routeName={cfg.pt}
                 className={
                     'rounded-full border px-2 py-1 transition ' +
                     (isPt
@@ -57,7 +50,7 @@ export default function LanguageToggle() {
                 }
             >
                 PT
-            </Link>
+            </SiteLink>
         </div>
     );
 }

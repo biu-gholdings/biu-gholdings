@@ -1,43 +1,45 @@
-# DNS cutover — GitHub Pages → Laravel origin
+# DNS cutover — legacy Pages → static corporate frontend
 
-## Problem
+## Target state
 
-While `biu-gholdings.org` points at **GitHub Pages**, visitors see the Jekyll/README site and any public Pages source — not the Laravel/Inertia application.
+- **GitHub Pages** serves branch **`gh-pages`** only (automated via [deploy-pages.yml](../.github/workflows/deploy-pages.yml)).
+- **`biu-gholdings.org`** shows the institutional React frontend — not README/Jekyll/docs.
+- Repository stays **private**; internals remain on `develop`/`main`.
 
-## Steps
+## 1. Enable GitHub Pages on `gh-pages`
 
-### 1. Disable GitHub Pages (required)
+1. Push to `develop` (triggers deploy workflow) or run **Deploy GitHub Pages** manually.
+2. **Settings → Pages** → Source: branch **`gh-pages`**, folder **`/ (root)`**.
+3. Custom domain: **biu-gholdings.org** — wait for DNS check / certificate.
 
-1. Open **github.com/biu-gholdings/biu-gholdings** → **Settings** → **Pages**.
-2. Under **Build and deployment**, set source to **None** / disable Pages.
-3. Remove custom domain **biu-gholdings.org** from Pages if listed.
-4. Confirm the repository stays **Private**.
+## 2. Cloudflare (recommended)
 
-### 2. Provision production server
+| Setting | Value |
+|---------|--------|
+| `@` | `CNAME` → `<username>.github.io` **or** GitHub Pages A records |
+| `www` | `CNAME` → `biu-gholdings.org` |
+| Proxy | Enabled (orange cloud) |
+| SSL | Full (strict) |
 
-- Laravel Forge site (or VPS) with PHP 8.2+, Nginx, document root **`public/`**.
-- Deploy `develop` (or `main`) using [forge-deploy.sh](forge-deploy.sh).
-- Set `APP_URL=https://biu-gholdings.org` in server `.env`.
+GitHub documents Pages IP ranges; Cloudflare proxy is compatible when SSL mode is correct.
 
-### 3. Update DNS (Cloudflare or registrar)
+**Remove** stale records pointing only at old Jekyll site if they differ.
 
-**Remove** GitHub Pages records, for example:
+## 3. Verify propagation
 
-- `A` records to `185.199.108.153` … `185.199.111.153`
-- `CNAME` `www` → `biu-gholdings.github.io`
+```bash
+curl -sI https://biu-gholdings.org | grep -i server
+curl -s https://biu-gholdings.org | head -20
+```
 
-**Add** origin records to your server:
+Expected: HTML with Vite bundle references (`/assets/…`), not Jekyll `markdown-body` / README title.
 
-| Name | Type | Value |
-|------|------|--------|
-| `@` | `A` | Your server public IPv4 |
-| `www` | `CNAME` | `biu-gholdings.org` (or separate `A`) |
+## 4. Security checks
 
-If using **Cloudflare**, proxy (orange cloud) only after origin TLS is valid (**Full (strict)**).
+- `https://biu-gholdings.org/docs/` → 404
+- `https://biu-gholdings.org/README.md` → 404
+- No PDFs from `docs/source/` publicly reachable
 
-### 4. Propagation and verification
+## 5. Optional Forge path
 
-- Wait for DNS TTL (minutes to hours).
-- `curl -sI https://biu-gholdings.org` should **not** return `server: GitHub.com`.
-- Response should be Laravel/Inertia HTML (Vite assets under `/build/`).
-- Run [POST-DEPLOY-CHECKLIST.md](POST-DEPLOY-CHECKLIST.md).
+If you later move to PHP/Laravel hosting, repoint DNS to the VPS origin and disable Pages custom domain. See [README.md](README.md) and [DEPLOYMENT_STATUS.md](../DEPLOYMENT_STATUS.md).

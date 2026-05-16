@@ -4,7 +4,9 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "build:pages": "vite build --config vite.config.pages.js && node scripts/build-pages.mjs",
+        "dev": "vite",
+        "dev:pages": "vite --config vite.config.pages.js"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
@@ -19,6 +21,7 @@
         "@inertiajs/react": "^3.1.1",
         "react": "^19.2.6",
         "react-dom": "^19.2.6",
+        "react-router-dom": "^7.6.2",
         "ziggy-js": "^2.6.2"
     }
 }

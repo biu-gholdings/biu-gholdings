@@ -1,17 +1,9 @@
-import { Head, Link, usePage } from '@inertiajs/react';
-import { route as ziggyRoute } from 'ziggy-js';
+import { PageHead, SiteLink, useSite } from '@/lib/site';
 import LanguageToggle from '@/Components/LanguageToggle';
 
 export default function MainLayout({ title, children }) {
-    const { component: rawComponent, props } = usePage();
-    const ziggy = props.ziggy;
-    const component =
-        typeof rawComponent === 'string' && rawComponent.includes('/')
-            ? rawComponent.split('/').pop()
-            : rawComponent;
-    const isPt = /Pt$/.test(component ?? '');
-
-    const r = (name, params) => ziggyRoute(name, params ?? {}, false, ziggy);
+    const { pageComponent } = useSite();
+    const isPt = /Pt$/.test(pageComponent ?? '');
 
     const nav = isPt
         ? [
@@ -35,11 +27,11 @@ export default function MainLayout({ title, children }) {
 
     return (
         <div className="min-h-screen bg-zinc-50 text-zinc-900">
-            <Head title={title} />
+            <PageHead title={title} />
             <header className="border-b border-zinc-200 bg-white">
                 <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
-                    <Link
-                        href={r(isPt ? 'home.pt' : 'home')}
+                    <SiteLink
+                        routeName={isPt ? 'home.pt' : 'home'}
                         className="flex min-w-0 items-center gap-3"
                     >
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-900 text-[10px] font-bold tracking-tight">
@@ -53,16 +45,16 @@ export default function MainLayout({ title, children }) {
                                     : 'Corporate infrastructure for Africa'}
                             </span>
                         </div>
-                    </Link>
+                    </SiteLink>
                     <nav className="hidden flex-wrap items-center gap-5 text-xs font-medium text-zinc-700 lg:flex">
                         {nav.map(([label, routeName]) => (
-                            <Link
+                            <SiteLink
                                 key={routeName}
-                                href={r(routeName)}
+                                routeName={routeName}
                                 className="whitespace-nowrap hover:text-zinc-900"
                             >
                                 {label}
-                            </Link>
+                            </SiteLink>
                         ))}
                     </nav>
                     <div className="flex shrink-0 items-center gap-3">
@@ -72,9 +64,9 @@ export default function MainLayout({ title, children }) {
                 <div className="border-t border-zinc-100 bg-white lg:hidden">
                     <nav className="mx-auto flex max-w-6xl flex-wrap gap-x-4 gap-y-2 px-4 py-3 text-xs font-medium text-zinc-700">
                         {nav.map(([label, routeName]) => (
-                            <Link key={routeName} href={r(routeName)} className="hover:text-zinc-900">
+                            <SiteLink key={routeName} routeName={routeName} className="hover:text-zinc-900">
                                 {label}
-                            </Link>
+                            </SiteLink>
                         ))}
                     </nav>
                 </div>

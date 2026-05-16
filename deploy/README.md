@@ -1,6 +1,8 @@
-# Production deployment (Forge / VPS)
+# Production deployment
 
-This directory defines the **only** supported public deployment path for biu-gholdings.org.
+**Primary public path:** GitHub Pages branch **`gh-pages`** (static corporate frontend) — see [DEPLOYMENT_STATUS.md](../DEPLOYMENT_STATUS.md) and `npm run build:pages`.
+
+**Optional:** Forge / VPS for full Laravel/PHP runtime (below).
 
 ## Principles
 
