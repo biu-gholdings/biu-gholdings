@@ -4,7 +4,7 @@ Biu-g Holdings corporate website — production deployment.
 
 **Status and cutover:** [DEPLOYMENT_STATUS.md](../DEPLOYMENT_STATUS.md) · **Forge/VPS scripts:** [deploy/](../deploy/README.md)
 
-GitHub Pages cannot run Laravel. Disable Pages in repository settings, remove any root `CNAME`, and point **biu-gholdings.org** DNS to your PHP origin ([deploy/DNS-CUTOVER.md](../deploy/DNS-CUTOVER.md)).
+**Public site:** GitHub Pages from **`gh-pages`** branch only ([DEPLOYMENT_STATUS.md](../DEPLOYMENT_STATUS.md), [deploy/GITHUB-PAGES-SETUP.md](../deploy/GITHUB-PAGES-SETUP.md)). Optional PHP hosting: [deploy/DNS-CUTOVER.md](../deploy/DNS-CUTOVER.md).
 
 ---
 

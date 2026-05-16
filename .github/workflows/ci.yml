@@ -45,8 +45,14 @@ jobs:
       - name: Build static Pages artifact
         run: npm run build:pages
 
-      - name: Verify Pages artifact safety
+      - name: Verify Pages artifact safety (gh-pages whitelist)
         run: node scripts/verify-pages-artifact.mjs dist-pages-publish
+
+      - name: Block source paths in Pages artifact
+        run: |
+          test ! -e dist-pages-publish/README.md
+          test ! -d dist-pages-publish/docs
+          test ! -f dist-pages-publish/composer.json
 
       - name: Run tests
         run: php artisan test

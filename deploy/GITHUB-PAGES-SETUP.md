@@ -1,10 +1,12 @@
 # GitHub Pages setup — static institutional frontend
 
-Deploys **only** the Vite-built corporate site to the **`gh-pages`** branch. No Laravel, no `docs/`, no PDFs, no README.
+Deploys **only** the Vite-built corporate site to the dedicated **`gh-pages`** branch.
+
+**Permanent policy:** [.github/PAGES_POLICY.md](../.github/PAGES_POLICY.md) — never publish `main`/`develop` or `/docs` as Pages source.
 
 ---
 
-## 1. Enable Pages from `gh-pages`
+## 1. Enable Pages from `gh-pages` only
 
 1. Open **github.com/biu-gholdings/biu-gholdings**
 2. **Settings → Pages**

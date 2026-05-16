@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Ensures the Pages artifact contains only the static institutional frontend.
+ * Whitelist verification: artifact must contain ONLY the static institutional frontend.
+ * Blocks README, docs/, PDFs, Laravel source, and Jekyll from reaching gh-pages.
  */
 
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -15,8 +16,29 @@ const allowedRootFiles = new Set(['index.html', '404.html', '.nojekyll', 'CNAME'
 const allowedRouteDirs = new Set(
     allPublicPaths.filter((p) => p !== '/').map((p) => p.replace(/^\//, '')),
 );
-const forbiddenDirs = new Set(['docs', 'deploy', 'vendor', 'storage', 'database', 'app', 'routes', 'scripts']);
-const forbiddenExtensions = ['.pdf', '.md', '.php', '.env'];
+const forbiddenDirs = new Set([
+    'docs',
+    'deploy',
+    'vendor',
+    'storage',
+    'database',
+    'app',
+    'routes',
+    'scripts',
+    'resources',
+    'node_modules',
+    '.github',
+]);
+const forbiddenRootNames = new Set([
+    'README.md',
+    'readme.md',
+    'composer.json',
+    'package.json',
+    'artisan',
+    '_config.yml',
+]);
+const forbiddenExtensions = ['.pdf', '.md', '.php', '.env', '.blade.php', '.lock'];
+const allowedAssetExtensions = ['.js', '.css', '.map', '.woff', '.woff2'];
 
 function walk(dir, files = []) {
     for (const entry of readdirSync(dir)) {
@@ -55,6 +77,10 @@ for (const entry of readdirSync(publishDir)) {
     if (!allowedRootFiles.has(entry)) {
         errors.push(`Unexpected root file: ${entry}`);
     }
+
+    if (forbiddenRootNames.has(entry)) {
+        errors.push(`Forbidden root file (source leak): ${entry}`);
+    }
 }
 
 if (!existsSync(join(publishDir, 'assets'))) {
@@ -64,21 +90,31 @@ if (!existsSync(join(publishDir, 'assets'))) {
 for (const routeDir of allowedRouteDirs) {
     const indexPath = join(publishDir, routeDir, 'index.html');
     if (!existsSync(indexPath)) {
-        errors.push(`Missing static page: /${routeDir}/index.html`);
+        errors.push(`Missing EN/PT static page: /${routeDir}/index.html`);
     }
+}
+
+if (!existsSync(join(publishDir, '.nojekyll'))) {
+    errors.push('Missing .nojekyll (Jekyll would process the site otherwise)');
 }
 
 if (readFileSync(join(publishDir, 'CNAME'), 'utf8').trim() !== 'biu-gholdings.org') {
     errors.push('CNAME must be biu-gholdings.org');
 }
 
-for (const file of walk(publishDir)) {
+const allFiles = walk(publishDir);
+
+for (const file of allFiles) {
     const rel = relative(publishDir, file);
     const parts = rel.split(/[/\\]/);
     const base = parts.at(-1);
 
     if (parts.some((p) => forbiddenDirs.has(p))) {
-        errors.push(`Forbidden path: ${rel}`);
+        errors.push(`Forbidden path (source leak): ${rel}`);
+    }
+
+    if (base.startsWith('README')) {
+        errors.push(`Forbidden README exposure: ${rel}`);
     }
 
     for (const ext of forbiddenExtensions) {
@@ -87,8 +123,12 @@ for (const file of walk(publishDir)) {
         }
     }
 
-    if (base === 'README.md') {
-        errors.push(`Forbidden file: ${rel}`);
+    if (parts[0] === 'assets') {
+        const ext = base.includes('.') ? base.slice(base.lastIndexOf('.')) : '';
+        if (ext && !allowedAssetExtensions.includes(ext)) {
+            errors.push(`Unexpected asset type: ${rel}`);
+        }
+        continue;
     }
 
     if (parts.length === 2 && parts[0] !== 'assets' && parts[1] !== 'index.html') {
@@ -97,14 +137,24 @@ for (const file of walk(publishDir)) {
 }
 
 const indexHtml = readFileSync(join(publishDir, 'index.html'), 'utf8');
-if (indexHtml.includes('markdown-body') || !indexHtml.includes('/assets/')) {
-    errors.push('index.html is not a valid Vite static shell');
+if (indexHtml.includes('markdown-body') || indexHtml.includes('jekyll')) {
+    errors.push('index.html looks like legacy README/Jekyll output');
+}
+if (!indexHtml.includes('/assets/') || !indexHtml.includes('id="app"')) {
+    errors.push('index.html is not a valid institutional frontend shell');
+}
+
+const minExpectedFiles = allowedRootFiles.size + allowedRouteDirs.size + 1;
+if (allFiles.length < minExpectedFiles) {
+    errors.push(`Too few files in artifact (expected at least ${minExpectedFiles}, got ${allFiles.length})`);
 }
 
 if (errors.length) {
-    console.error('Artifact verification failed:\n');
+    console.error('Pages artifact verification failed:\n');
     errors.forEach((e) => console.error(`  - ${e}`));
     process.exit(1);
 }
 
-console.log(`OK: safe static frontend (${allPublicPaths.length} routes, assets only).`);
+console.log(
+    `OK: gh-pages-safe artifact (${allPublicPaths.length} EN/PT routes, ${allFiles.length} files, assets only).`,
+);

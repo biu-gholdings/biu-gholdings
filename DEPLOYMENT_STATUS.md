@@ -1,39 +1,71 @@
 # Deployment status
 
 **Updated:** 2026-05-16  
-**Public site:** [biu-gholdings.org](https://biu-gholdings.org)  
-**Public branch:** `gh-pages` (static frontend only)  
-**Source branches:** `develop`, `main` (private — Laravel + internal docs)
+**Public domain:** [biu-gholdings.org](https://biu-gholdings.org)  
+**Public branch:** `gh-pages` (compiled static frontend only)  
+**Source:** `develop`, `main` (private)
 
 ---
 
-## Architecture (simplified)
+## Hardened architecture
 
 ```
-develop / main (private)          gh-pages (public orphan branch)
-─────────────────────────         ───────────────────────────────
-Laravel + Inertia (internal)  →   npm run build:pages (GitHub Actions)
-React page components              ├── assets/          (Vite bundle)
-docs/, PDFs, README                ├── index.html       (Home)
-deploy scripts                     ├── pt/index.html    (Home PT)
-                                   ├── about/index.html … (14 routes)
-                                   ├── .nojekyll
-                                   └── CNAME → biu-gholdings.org
+develop / main (PRIVATE)              gh-pages (PUBLIC orphan branch)
+──────────────────────              ────────────────────────────────
+Laravel + Inertia + docs/      →     Vite static export ONLY
+README, PDFs, deploy/                • assets/*.js, *.css
+                                     • index.html + 14 route folders
+                                     • .nojekyll, CNAME, 404.html
+                                     ✗ NO README, docs/, PDFs, PHP
 ```
 
-| What | Where |
-|------|--------|
-| Institutional EN/PT pages (7 × 2) | Static React export — same components & Tailwind as Laravel app |
-| Laravel / PHP runtime | **Not** on GitHub Pages — local & optional Forge only |
-| Internal docs & PDFs | `develop` / `main` only — **never** on `gh-pages` |
+| Control | Implementation |
+|---------|----------------|
+| Dedicated `gh-pages` branch | `peaceiris/actions-gh-pages` + `force_orphan: true` |
+| Compiled assets only | `dist-pages-publish/` from `npm run build:pages` |
+| No source publish | Pre-publish leak checks + whitelist verifier |
+| No README/docs exposure | [scripts/verify-pages-artifact.mjs](scripts/verify-pages-artifact.mjs) + post-deploy job |
+| Automated deploy | [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) |
+| Custom domain | `CNAME` → `biu-gholdings.org` (artifact only) |
+| EN/PT routes (14) | Per-route `index.html` + React Router |
+| UI | Same React components & Tailwind as internal app |
+
+Policy: [.github/PAGES_POLICY.md](.github/PAGES_POLICY.md)
 
 ---
 
-## Static pages (14)
+## GitHub Pages settings (required)
+
+1. **Settings → Pages**
+2. **Source:** Deploy from a branch → **`gh-pages`** / **`/ (root)`**
+3. **Not** `main`, `develop`, or `/docs`
+4. **Custom domain:** `biu-gholdings.org` + **Enforce HTTPS**
+
+Setup: [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md)
+
+---
+
+## Deploy flow
+
+```bash
+npm run build:pages   # local: build + verify
+```
+
+CI on push to `develop`/`main`:
+
+1. Vite production build (`vite.config.pages.js`)
+2. Generate 14 EN/PT static shells
+3. Verify whitelist
+4. Push to `gh-pages`
+5. Re-checkout `gh-pages` and verify again
+
+---
+
+## Static pages
 
 | EN | PT |
 |----|-----|
-| `/` Home | `/pt` |
+| `/` | `/pt` |
 | `/about` | `/sobre` |
 | `/leadership` | `/lideranca` |
 | `/corporate-structure` | `/estrutura-corporativa` |
@@ -43,53 +75,13 @@ deploy scripts                     ├── pt/index.html    (Home PT)
 
 ---
 
-## Automation
-
-**Workflow:** [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
-
-1. `npm ci`
-2. `npm run build:pages` — `vite.config.pages.js` + [scripts/build-pages.mjs](scripts/build-pages.mjs)
-3. [scripts/verify-pages-artifact.mjs](scripts/verify-pages-artifact.mjs)
-4. Push artifact to **`gh-pages`** (orphan branch)
-
-**Local:**
-
-```bash
-npm run build:pages    # build + verify
-npm run dev:pages      # preview static app
-```
-
----
-
-## GitHub Pages setup (one-time)
-
-1. **Settings → Pages**
-2. **Source:** Deploy from a branch
-3. **Branch:** `gh-pages` / `/ (root)`
-4. **Custom domain:** `biu-gholdings.org` → enforce HTTPS
-5. Keep repository **Private**
-
-Full steps: [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md)
-
----
-
 ## Cloudflare
 
 - CNAME `@` → `biu-gholdings.github.io` (proxied)
 - SSL: **Full (strict)**
-- Cache `/assets/*`; short TTL on HTML
 
 ---
 
-## Laravel (internal only)
+## Laravel (internal)
 
-Local development and optional VPS/Forge hosting use the full Laravel stack. That path does **not** publish to `gh-pages`. See [deploy/README.md](deploy/README.md).
-
----
-
-## CI
-
-| Workflow | Role |
-|----------|------|
-| [ci.yml](.github/workflows/ci.yml) | Laravel tests + static build verification on PR/push |
-| [deploy-pages.yml](.github/workflows/deploy-pages.yml) | Publish static site to `gh-pages` |
+Full stack runs locally / optional Forge — **not** on GitHub Pages. See [deploy/README.md](deploy/README.md).

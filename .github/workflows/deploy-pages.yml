@@ -1,11 +1,19 @@
 name: Deploy static site to gh-pages
 
-# Node-only: builds static institutional frontend → orphan gh-pages branch.
-# No Laravel, no docs/, no PDFs, no README.
+# Hardened Pages deploy: build static export → verify → orphan gh-pages only.
+# Never publishes develop/main source, README, docs/, or PDFs.
 
 on:
   push:
     branches: [develop, main]
+    paths:
+      - 'resources/**'
+      - 'scripts/build-pages.mjs'
+      - 'scripts/verify-pages-artifact.mjs'
+      - 'vite.config.pages.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
@@ -17,32 +25,73 @@ concurrency:
 
 jobs:
   deploy:
+    name: Build and publish gh-pages
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source (develop/main — not published as-is)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Block CNAME on source branches
-        run: test ! -f CNAME
+        run: |
+          if [ -f CNAME ]; then
+            echo "::error::CNAME on source branch would bind domain to repo root/README."
+            exit 1
+          fi
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
           cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static export (Vite)
+      - name: Build static institutional frontend (Vite)
         run: npm run build:pages
         env:
           NODE_ENV: production
 
-      - name: Publish to gh-pages branch
+      - name: Verify artifact (whitelist — no docs/README/PDFs/source)
+        run: node scripts/verify-pages-artifact.mjs dist-pages-publish
+
+      - name: Reject repository source in publish directory
+        run: |
+          set -e
+          for path in composer.json package.json artisan README.md docs deploy app routes vendor; do
+            if [ -e "dist-pages-publish/$path" ]; then
+              echo "::error::Source leak: dist-pages-publish/$path must not be published"
+              exit 1
+            fi
+          done
+          echo "Publish file list ($(find dist-pages-publish -type f | wc -l | tr -d ' ') files):"
+          find dist-pages-publish -type f | sort
+
+      - name: Publish compiled assets to gh-pages branch only
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist-pages-publish
           publish_branch: gh-pages
           force_orphan: true
-          commit_message: "Deploy static institutional frontend"
+          commit_message: 'Deploy static institutional frontend [skip ci]'
+
+  verify-gh-pages:
+    name: Verify gh-pages branch contents
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout gh-pages deployment branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Confirm gh-pages has no source repository content
+        run: node scripts/verify-pages-artifact.mjs .
