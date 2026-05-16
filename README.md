@@ -2,6 +2,8 @@
 
 Institutional, static-first corporate site for **biu-gholdings.org**: bilingual (EN/PT), regulator-oriented, minimal.
 
+> **Deployment:** This application requires **PHP (Laravel)** on a VPS or [Laravel Forge](https://forge.laravel.com). It is **not** deployed via GitHub Pages. See [DEPLOYMENT_STATUS.md](DEPLOYMENT_STATUS.md) and [deploy/](deploy/README.md). Internal documentation under `docs/` is not published to the public web root.
+
 ## Overview
 
 Official gateway to Biu-g Holdings LLC across the United States, Portugal, and Angola. The stack is intentionally simple for v1:

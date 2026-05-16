@@ -2,6 +2,10 @@
 
 Biu-g Holdings corporate website — production deployment.
 
+**Status and cutover:** [DEPLOYMENT_STATUS.md](../DEPLOYMENT_STATUS.md) · **Forge/VPS scripts:** [deploy/](../deploy/README.md)
+
+GitHub Pages cannot run Laravel. Disable Pages in repository settings, remove any root `CNAME`, and point **biu-gholdings.org** DNS to your PHP origin ([deploy/DNS-CUTOVER.md](../deploy/DNS-CUTOVER.md)).
+
 ---
 
 ## 1. Recommended infrastructure
@@ -31,6 +35,8 @@ git clone https://github.com/biu-gholdings/biu-gholdings.git
 cd biu-gholdings
 ```
 
+Or use the automated hook: `bash deploy/forge-deploy.sh` (from app root).
+
 ### 2) Backend
 
 ```bash
@@ -38,6 +44,8 @@ composer install --no-dev --optimize-autoloader
 cp .env.example .env
 php artisan key:generate
 ```
+
+Use [deploy/env.production.snippet](../deploy/env.production.snippet) for production values. Web server document root must be **`public/`** only — never `docs/` or the repository root.
 
 Configure `.env` for `APP_URL`, `APP_ENV=production`, etc. v1 does not require database credentials for public pages if you strip DB usage; the stock Laravel app may still define `DB_*` — use SQLite or leave unused.
 
