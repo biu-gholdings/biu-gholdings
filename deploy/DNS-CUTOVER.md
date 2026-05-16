@@ -2,14 +2,14 @@
 
 ## Target state
 
-- **GitHub Pages** serves branch **`gh-pages`** only (automated via [deploy-pages.yml](../.github/workflows/deploy-pages.yml)).
-- **`biu-gholdings.org`** shows the institutional React frontend — not README/Jekyll/docs.
-- Repository stays **private**; internals remain on `develop`/`main`.
+- **`gh-pages`** branch contains **only** the static institutional frontend (Vite build).
+- **`biu-gholdings.org`** shows React corporate pages — not README/Jekyll/docs.
+- Laravel source and `docs/` stay on private **`develop`** / **`main`**.
 
 ## 1. Enable GitHub Pages on `gh-pages`
 
-1. Push to `develop` (triggers deploy workflow) or run **Deploy GitHub Pages** manually.
-2. **Settings → Pages** → Source: branch **`gh-pages`**, folder **`/ (root)`**.
+1. Push to `develop` (runs [deploy-pages.yml](../.github/workflows/deploy-pages.yml)) or **Actions → Deploy static site to gh-pages**.
+2. **Settings → Pages** → **Deploy from a branch** → **`gh-pages`** / **`/ (root)`**.
 3. Custom domain: **biu-gholdings.org** — wait for DNS check / certificate.
 
 ## 2. Cloudflare (recommended)

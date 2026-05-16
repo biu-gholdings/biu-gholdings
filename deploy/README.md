@@ -1,8 +1,8 @@
 # Production deployment
 
-**Primary public path:** GitHub Pages branch **`gh-pages`** (static corporate frontend) — see [DEPLOYMENT_STATUS.md](../DEPLOYMENT_STATUS.md) and `npm run build:pages`.
+**Public site:** GitHub Pages branch **`gh-pages`** — static institutional frontend only (`npm run build:pages`). See [GITHUB-PAGES-SETUP.md](GITHUB-PAGES-SETUP.md).
 
-**Optional:** Forge / VPS for full Laravel/PHP runtime (below).
+**Optional:** Forge / VPS for Laravel/PHP (internal/full stack) — below.
 
 ## Principles
 

@@ -1,16 +1,20 @@
 #!/usr/bin/env node
 /**
- * Production safety checks for GitHub Pages artifact.
- * Fails CI if internal repo content could be published.
+ * Ensures the Pages artifact contains only the static institutional frontend.
  */
 
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
-import { join, relative } from 'node:path';
+import { dirname, join, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { allPublicPaths } from '../resources/js/lib/routes.js';
 
-const publishDir = process.argv[2] ?? 'dist-pages-publish';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const publishDir = process.argv[2] ?? join(__dirname, '..', 'dist-pages-publish');
 
 const allowedRootFiles = new Set(['index.html', '404.html', '.nojekyll', 'CNAME']);
-const forbiddenNames = new Set(['README.md', 'readme.md']);
+const allowedRouteDirs = new Set(
+    allPublicPaths.filter((p) => p !== '/').map((p) => p.replace(/^\//, '')),
+);
 const forbiddenDirs = new Set(['docs', 'deploy', 'vendor', 'storage', 'database', 'app', 'routes', 'scripts']);
 const forbiddenExtensions = ['.pdf', '.md', '.php', '.env'];
 
@@ -27,19 +31,23 @@ function walk(dir, files = []) {
     return files;
 }
 
+const errors = [];
+
 if (!existsSync(publishDir)) {
-    console.error(`Missing artifact directory: ${publishDir}`);
+    console.error(`Missing: ${publishDir}`);
     process.exit(1);
 }
 
-const rootEntries = readdirSync(publishDir);
-const errors = [];
-
-for (const entry of rootEntries) {
+for (const entry of readdirSync(publishDir)) {
     const full = join(publishDir, entry);
+
     if (statSync(full).isDirectory()) {
-        if (entry !== 'assets') {
-            errors.push(`Unexpected root directory: ${entry}`);
+        if (entry === 'assets') {
+            continue;
+        }
+
+        if (!allowedRouteDirs.has(entry)) {
+            errors.push(`Unexpected directory: ${entry}/`);
         }
         continue;
     }
@@ -50,52 +58,53 @@ for (const entry of rootEntries) {
 }
 
 if (!existsSync(join(publishDir, 'assets'))) {
-    errors.push('Missing assets/ directory');
+    errors.push('Missing assets/');
 }
 
-const cname = readFileSync(join(publishDir, 'CNAME'), 'utf8').trim();
-if (cname !== 'biu-gholdings.org') {
-    errors.push(`CNAME must be biu-gholdings.org (got: ${cname})`);
+for (const routeDir of allowedRouteDirs) {
+    const indexPath = join(publishDir, routeDir, 'index.html');
+    if (!existsSync(indexPath)) {
+        errors.push(`Missing static page: /${routeDir}/index.html`);
+    }
 }
 
-const nojekyll = readFileSync(join(publishDir, '.nojekyll'), 'utf8');
-if (nojekyll.length > 1) {
-    errors.push('.nojekyll must be empty');
+if (readFileSync(join(publishDir, 'CNAME'), 'utf8').trim() !== 'biu-gholdings.org') {
+    errors.push('CNAME must be biu-gholdings.org');
 }
 
 for (const file of walk(publishDir)) {
     const rel = relative(publishDir, file);
     const parts = rel.split(/[/\\]/);
-    const base = parts[parts.length - 1];
-
-    if (forbiddenNames.has(base)) {
-        errors.push(`Forbidden file: ${rel}`);
-    }
+    const base = parts.at(-1);
 
     if (parts.some((p) => forbiddenDirs.has(p))) {
-        errors.push(`Forbidden path segment: ${rel}`);
+        errors.push(`Forbidden path: ${rel}`);
     }
 
     for (const ext of forbiddenExtensions) {
         if (base.endsWith(ext)) {
-            errors.push(`Forbidden extension (${ext}): ${rel}`);
+            errors.push(`Forbidden file type: ${rel}`);
         }
+    }
+
+    if (base === 'README.md') {
+        errors.push(`Forbidden file: ${rel}`);
+    }
+
+    if (parts.length === 2 && parts[0] !== 'assets' && parts[1] !== 'index.html') {
+        errors.push(`Route folder may only contain index.html: ${rel}`);
     }
 }
 
 const indexHtml = readFileSync(join(publishDir, 'index.html'), 'utf8');
-if (indexHtml.includes('markdown-body') || indexHtml.includes('Jekyll')) {
-    errors.push('index.html looks like legacy Jekyll/README output');
-}
-
-if (!indexHtml.includes('/assets/')) {
-    errors.push('index.html must reference Vite /assets/ bundles');
+if (indexHtml.includes('markdown-body') || !indexHtml.includes('/assets/')) {
+    errors.push('index.html is not a valid Vite static shell');
 }
 
 if (errors.length) {
-    console.error('Pages artifact verification failed:\n');
+    console.error('Artifact verification failed:\n');
     errors.forEach((e) => console.error(`  - ${e}`));
     process.exit(1);
 }
 
-console.log(`OK: ${publishDir} is safe to publish (${walk(publishDir).length} files under assets/ + shell).`);
+console.log(`OK: safe static frontend (${allPublicPaths.length} routes, assets only).`);

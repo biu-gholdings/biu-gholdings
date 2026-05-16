@@ -39,3 +39,6 @@ export const pathToComponent = {
 export function url(routeName) {
     return routePaths[routeName] ?? '/';
 }
+
+/** All public URLs included in the GitHub Pages static export (14 pages). */
+export const allPublicPaths = Object.values(routePaths);

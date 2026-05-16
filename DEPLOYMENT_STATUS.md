@@ -1,105 +1,95 @@
 # Deployment status
 
-**Last updated:** 2026-05-16  
-**Source branches:** `main`, `develop` (private)  
-**Public domain:** [biu-gholdings.org](https://biu-gholdings.org)  
-**Deploy method:** GitHub Actions → official GitHub Pages (`actions/deploy-pages`)
+**Updated:** 2026-05-16  
+**Public site:** [biu-gholdings.org](https://biu-gholdings.org)  
+**Public branch:** `gh-pages` (static frontend only)  
+**Source branches:** `develop`, `main` (private — Laravel + internal docs)
 
 ---
 
-## Architecture
+## Architecture (simplified)
 
-| Layer | Role |
-|-------|------|
-| **Private repo** (`develop` / `main`) | Laravel + Inertia source, `docs/`, internal PDFs, deploy scripts |
-| **GitHub Actions** | `npm run build:pages` → verified artifact → `actions/deploy-pages` |
-| **GitHub Pages** | Static CDN — corporate React frontend only |
-| **Cloudflare** (recommended) | DNS, proxy, WAF, SSL in front of Pages |
+```
+develop / main (private)          gh-pages (public orphan branch)
+─────────────────────────         ───────────────────────────────
+Laravel + Inertia (internal)  →   npm run build:pages (GitHub Actions)
+React page components              ├── assets/          (Vite bundle)
+docs/, PDFs, README                ├── index.html       (Home)
+deploy scripts                     ├── pt/index.html    (Home PT)
+                                   ├── about/index.html … (14 routes)
+                                   ├── .nojekyll
+                                   └── CNAME → biu-gholdings.org
+```
 
-Public visitors never receive repository markdown, PDFs, or deployment scripts.
-
----
-
-## What is public vs private
-
-| Path | Published? |
-|------|------------|
-| `assets/*` (Vite build) | Yes |
-| `index.html`, `404.html` | Yes |
-| `.nojekyll`, `CNAME` | Yes |
-| `README.md`, `docs/`, `docs/source/*.pdf` | **Never** |
-| `deploy/`, `scripts/`, Laravel `app/` | **Never** |
-
-Enforced by [scripts/build-pages.mjs](scripts/build-pages.mjs) and [scripts/verify-pages-artifact.mjs](scripts/verify-pages-artifact.mjs) in CI.
-
----
-
-## Exact GitHub Pages setup steps
-
-See **[deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md)** for the full checklist. Summary:
-
-1. **Settings → Pages → Source:** **GitHub Actions** (not “Deploy from a branch”).
-2. **Custom domain:** `biu-gholdings.org` — enable **Enforce HTTPS**.
-3. Push to `develop` or run workflow **Deploy GitHub Pages** manually.
-4. Configure **Cloudflare** DNS (proxied) with SSL **Full (strict)**.
-
-Do **not** commit `CNAME` on `develop`/`main` (CI blocks it). `CNAME` is generated only inside the build artifact.
-
----
-
-## Automated workflow
-
-**File:** [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
-
-| Step | Action |
+| What | Where |
 |------|--------|
-| 1 | `npm ci` |
-| 2 | `npm run build:pages` — Vite production (`vite.config.pages.js`) |
-| 3 | `node scripts/verify-pages-artifact.mjs` |
-| 4 | `actions/upload-pages-artifact` |
-| 5 | `actions/deploy-pages` → environment `github-pages` |
+| Institutional EN/PT pages (7 × 2) | Static React export — same components & Tailwind as Laravel app |
+| Laravel / PHP runtime | **Not** on GitHub Pages — local & optional Forge only |
+| Internal docs & PDFs | `develop` / `main` only — **never** on `gh-pages` |
 
-**Local build:**
+---
+
+## Static pages (14)
+
+| EN | PT |
+|----|-----|
+| `/` Home | `/pt` |
+| `/about` | `/sobre` |
+| `/leadership` | `/lideranca` |
+| `/corporate-structure` | `/estrutura-corporativa` |
+| `/subsidiaries` | `/subsidiarias` |
+| `/investor-relations` | `/relacoes-com-investidores` |
+| `/contact` | `/contacto` |
+
+---
+
+## Automation
+
+**Workflow:** [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
+
+1. `npm ci`
+2. `npm run build:pages` — `vite.config.pages.js` + [scripts/build-pages.mjs](scripts/build-pages.mjs)
+3. [scripts/verify-pages-artifact.mjs](scripts/verify-pages-artifact.mjs)
+4. Push artifact to **`gh-pages`** (orphan branch)
+
+**Local:**
 
 ```bash
-npm run build:pages
-node scripts/verify-pages-artifact.mjs dist-pages-publish
+npm run build:pages    # build + verify
+npm run dev:pages      # preview static app
 ```
 
 ---
 
-## Cloudflare compatibility
+## GitHub Pages setup (one-time)
 
-- **CNAME** apex/`www` to GitHub Pages host (see setup doc).
-- **SSL/TLS:** Full (strict).
-- Cache **`/assets/*`** aggressively; avoid long cache on `index.html` / HTML routes.
-- Compatible with GitHub Pages custom domain + enforced HTTPS.
+1. **Settings → Pages**
+2. **Source:** Deploy from a branch
+3. **Branch:** `gh-pages` / `/ (root)`
+4. **Custom domain:** `biu-gholdings.org` → enforce HTTPS
+5. Keep repository **Private**
 
-Details: [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md) §4.
-
----
-
-## Optional: Laravel Forge / VPS
-
-PHP hosting for server-side Inertia is documented in [deploy/README.md](deploy/README.md). The v1 **public marketing site** uses **GitHub Pages static CDN** only.
+Full steps: [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md)
 
 ---
 
-## CI workflows
+## Cloudflare
 
-| Workflow | Purpose |
-|----------|---------|
-| [ci.yml](.github/workflows/ci.yml) | PHPUnit, Laravel + Pages builds, artifact verification |
-| [deploy-pages.yml](.github/workflows/deploy-pages.yml) | Production Pages deploy |
-| [deploy-production.yml](.github/workflows/deploy-production.yml) | Optional SSH / Forge |
+- CNAME `@` → `biu-gholdings.github.io` (proxied)
+- SSL: **Full (strict)**
+- Cache `/assets/*`; short TTL on HTML
 
 ---
 
-## Verification
+## Laravel (internal only)
 
-- [https://biu-gholdings.org/](https://biu-gholdings.org/) — React corporate home
-- [https://biu-gholdings.org/pt](https://biu-gholdings.org/pt) — PT home
-- EN/PT routes — SPA via `404.html` fallback
-- `/docs/`, `/README.md`, `*.pdf` — **404** on public host
+Local development and optional VPS/Forge hosting use the full Laravel stack. That path does **not** publish to `gh-pages`. See [deploy/README.md](deploy/README.md).
 
-[deploy/POST-DEPLOY-CHECKLIST.md](deploy/POST-DEPLOY-CHECKLIST.md)
+---
+
+## CI
+
+| Workflow | Role |
+|----------|------|
+| [ci.yml](.github/workflows/ci.yml) | Laravel tests + static build verification on PR/push |
+| [deploy-pages.yml](.github/workflows/deploy-pages.yml) | Publish static site to `gh-pages` |

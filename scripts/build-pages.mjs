@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 /**
- * Prepare GitHub Pages artifact: production static frontend only.
- * Output: dist-pages-publish/ (consumed by GitHub Actions deploy-pages workflow)
+ * GitHub Pages static export — institutional frontend only.
+ * Output: dist-pages-publish/ → pushed to gh-pages branch (no Laravel, no docs).
  */
 
 import { spawnSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { allPublicPaths } from '../resources/js/lib/routes.js';
 
-const viteOut = 'dist-pages';
-const publishDir = 'dist-pages-publish';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(__dirname, '..');
+const viteOut = join(root, 'dist-pages');
+const publishDir = join(root, 'dist-pages-publish');
 const domain = 'biu-gholdings.org';
 
 rmSync(publishDir, { recursive: true, force: true });
@@ -20,29 +24,43 @@ const flatIndex = join(viteOut, 'index.html');
 const sourceIndex = existsSync(flatIndex) ? flatIndex : nestedIndex;
 
 if (!existsSync(sourceIndex)) {
-    console.error('Missing Vite HTML output. Run: vite build --config vite.config.pages.js');
+    console.error('Missing Vite output. Run: vite build --config vite.config.pages.js');
     process.exit(1);
 }
 
 cpSync(join(viteOut, 'assets'), join(publishDir, 'assets'), { recursive: true });
 
-let indexHtml = readFileSync(sourceIndex, 'utf8');
-indexHtml = indexHtml.replace(/\.\.\/\.\.\/assets\//g, '/assets/');
-indexHtml = indexHtml.replace(/\/resources\/pages\//g, '/');
+let shellHtml = readFileSync(sourceIndex, 'utf8');
+shellHtml = shellHtml.replace(/\.\.\/\.\.\/assets\//g, '/assets/');
+shellHtml = shellHtml.replace(/\/resources\/pages\//g, '/');
 
-writeFileSync(join(publishDir, 'index.html'), indexHtml);
-writeFileSync(join(publishDir, '404.html'), indexHtml);
+function writePageAtPath(routePath, html) {
+    if (routePath === '/') {
+        writeFileSync(join(publishDir, 'index.html'), html);
+        return;
+    }
+
+    const dir = join(publishDir, routePath.replace(/^\//, ''));
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, 'index.html'), html);
+}
+
+for (const routePath of allPublicPaths) {
+    writePageAtPath(routePath, shellHtml);
+}
+
+writeFileSync(join(publishDir, '404.html'), shellHtml);
 writeFileSync(join(publishDir, '.nojekyll'), '\n');
 writeFileSync(join(publishDir, 'CNAME'), `${domain}\n`);
 
-const verify = spawnSync('node', ['scripts/verify-pages-artifact.mjs', publishDir], {
+const verify = spawnSync('node', [join(__dirname, 'verify-pages-artifact.mjs'), publishDir], {
     stdio: 'inherit',
+    cwd: root,
 });
 
 if (verify.status !== 0) {
     process.exit(verify.status ?? 1);
 }
 
-console.log(`Pages artifact ready in ${publishDir}/`);
-console.log('Included: assets/, index.html, 404.html, .nojekyll, CNAME');
-console.log('Excluded: docs/, README, PDFs, Laravel source, deploy scripts');
+console.log(`Static export ready: ${publishDir}/`);
+console.log(`Pages: ${allPublicPaths.length} EN/PT routes + 404.html + assets/`);

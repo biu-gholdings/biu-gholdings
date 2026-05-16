@@ -1,7 +1,7 @@
-name: Deploy GitHub Pages
+name: Deploy static site to gh-pages
 
-# Production-safe static deploy: Vite build → verified artifact → official GitHub Pages.
-# Never publishes README, docs/, PDFs, Laravel source, or deploy scripts.
+# Node-only: builds static institutional frontend → orphan gh-pages branch.
+# No Laravel, no docs/, no PDFs, no README.
 
 on:
   push:
@@ -9,32 +9,23 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages-production
+  group: gh-pages-static
   cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build static frontend
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source (develop/main only)
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Block root CNAME on source branches
-        run: |
-          if [ -f CNAME ]; then
-            echo "::error::Do not commit CNAME on develop/main. It is generated in the Pages artifact only."
-            exit 1
-          fi
+      - name: Block CNAME on source branches
+        run: test ! -f CNAME
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
@@ -42,28 +33,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Vite production build (static corporate site)
+      - name: Build static export (Vite)
         run: npm run build:pages
         env:
           NODE_ENV: production
 
-      - name: Verify artifact (no docs, PDFs, README, deploy scripts)
-        run: node scripts/verify-pages-artifact.mjs dist-pages-publish
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist-pages-publish
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to production Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist-pages-publish
+          publish_branch: gh-pages
+          force_orphan: true
+          commit_message: "Deploy static institutional frontend"

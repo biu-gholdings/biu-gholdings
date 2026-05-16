@@ -1,3 +1,7 @@
+/**
+ * Static export build for GitHub Pages (biu-gholdings.org).
+ * No Laravel runtime — separate from vite.config.js (Inertia/local dev).
+ */
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
