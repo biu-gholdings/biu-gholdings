@@ -20,6 +20,12 @@ Deploys **only** the Vite-built corporate site to the dedicated **`gh-pages`** b
 
 ---
 
+## First deployment
+
+See **[FIRST-DEPLOYMENT.md](FIRST-DEPLOYMENT.md)** — trigger workflow + switch Pages from `develop` to **`gh-pages`**.
+
+---
+
 ## 2. Deploy (automated)
 
 Push to `develop` or `main` runs [.github/workflows/deploy-pages.yml](../.github/workflows/deploy-pages.yml):

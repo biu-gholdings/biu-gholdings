@@ -18,6 +18,7 @@ const allowedRouteDirs = new Set(
 );
 const forbiddenDirs = new Set([
     'docs',
+    'source',
     'deploy',
     'vendor',
     'storage',

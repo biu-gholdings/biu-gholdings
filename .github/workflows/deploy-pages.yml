@@ -1,35 +1,28 @@
-name: Deploy static site to gh-pages
+name: Production GitHub Pages (gh-pages)
 
-# Hardened Pages deploy: build static export → verify → orphan gh-pages only.
-# Never publishes develop/main source, README, docs/, or PDFs.
+# Production pipeline: Vite build → verified artifact → orphan gh-pages branch.
+# Private repo safe: only compiled static frontend is public on gh-pages.
+# Never publishes README, docs/, docs/source/, PDFs, or deploy/ scripts.
 
 on:
   push:
     branches: [develop, main]
-    paths:
-      - 'resources/**'
-      - 'scripts/build-pages.mjs'
-      - 'scripts/verify-pages-artifact.mjs'
-      - 'vite.config.pages.js'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/deploy-pages.yml'
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: gh-pages-static
+  group: gh-pages-production
   cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Build and publish gh-pages
+    name: Build and publish to gh-pages
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source (develop/main — not published as-is)
+      - name: Checkout source (develop/main — not deployed directly)
         uses: actions/checkout@v4
         with:
           persist-credentials: true
@@ -37,7 +30,7 @@ jobs:
       - name: Block CNAME on source branches
         run: |
           if [ -f CNAME ]; then
-            echo "::error::CNAME on source branch would bind domain to repo root/README."
+            echo "::error::CNAME on source branch binds the domain to repo root/README."
             exit 1
           fi
 
@@ -49,27 +42,38 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static institutional frontend (Vite)
+      - name: Vite production build (static institutional frontend)
         run: npm run build:pages
         env:
           NODE_ENV: production
 
-      - name: Verify artifact (whitelist — no docs/README/PDFs/source)
+      - name: Verify artifact whitelist
         run: node scripts/verify-pages-artifact.mjs dist-pages-publish
 
-      - name: Reject repository source in publish directory
+      - name: Block source repository content in publish directory
         run: |
           set -e
-          for path in composer.json package.json artisan README.md docs deploy app routes vendor; do
+          for path in \
+            README.md \
+            composer.json package.json artisan \
+            docs docs/source \
+            deploy scripts \
+            app routes vendor resources \
+          ; do
             if [ -e "dist-pages-publish/$path" ]; then
-              echo "::error::Source leak: dist-pages-publish/$path must not be published"
+              echo "::error::Source leak: dist-pages-publish/$path"
               exit 1
             fi
           done
-          echo "Publish file list ($(find dist-pages-publish -type f | wc -l | tr -d ' ') files):"
+          shopt -s globstar
+          if compgen -G "dist-pages-publish/**/*.pdf" > /dev/null; then
+            echo "::error::PDF files must not be published"
+            exit 1
+          fi
+          echo "Publishing $(find dist-pages-publish -type f | wc -l | tr -d ' ') files:"
           find dist-pages-publish -type f | sort
 
-      - name: Publish compiled assets to gh-pages branch only
+      - name: Create or update gh-pages branch (compiled assets only)
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -79,12 +83,12 @@ jobs:
           commit_message: 'Deploy static institutional frontend [skip ci]'
 
   verify-gh-pages:
-    name: Verify gh-pages branch contents
+    name: Post-deploy verification
     needs: deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout gh-pages deployment branch
+      - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
@@ -93,5 +97,5 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Confirm gh-pages has no source repository content
+      - name: Verify gh-pages has no README, docs, PDFs, or source
         run: node scripts/verify-pages-artifact.mjs .
