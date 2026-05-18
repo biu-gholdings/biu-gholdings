@@ -19,32 +19,32 @@ const clusters = [
                     'Sociedade anónima angolana responsável pela operação dos rails CubeShackles em Angola. Faz interface com reguladores, bancos, operadoras de telecomunicações e instituições para correr infraestrutura financeira nativa em AOA.',
             },
             {
-                name: 'National Data Platform, Lda. (Angola)',
+                name: 'National Data Platform (Plataforma dentro da CubeShackles, S.A.)',
                 type: 'Plataforma de Dados',
-                status: 'Planeado',
+                status: 'Em Desenvolvimento',
                 description:
-                    'Subsidiária 100% detida pela CubeShackles, S.A., focada em dados económicos e sociais de nível soberano — inflação, desemprego, mercados informais, índices de preços locais e métricas de acesso.',
+                    'Plataforma de dados económicos e sociais de nível soberano — inflação, desemprego, mercados informais, índices de preços e métricas de acesso — operada dentro da CubeShackles, S.A.',
             },
             {
-                name: 'Kulifikila – Credit Bureau, Lda. (Angola)',
+                name: 'Kulifikila Credit Bureau (Plataforma dentro da CubeShackles, S.A.)',
                 type: 'Infraestrutura de Crédito',
-                status: 'Planeado',
+                status: 'Em Desenvolvimento',
                 description:
-                    'Central de risco de nova geração, focada em sectores formal e informal, com scoring multi-camada em AOA para bancos, fintechs e governo.',
+                    'Infraestrutura de crédito para sectores formal e informal, com scoring multi-camada em AOA para bancos, fintechs e governo.',
             },
             {
-                name: 'Empresa da Plataforma Nacional de Transporte (Lda., nome a definir)',
+                name: 'Plataforma Nacional de Transporte de Angola (Plataforma dentro da CubeShackles, S.A.)',
                 type: 'Mobilidade & Transporte',
-                status: 'Planeado',
+                status: 'Em Desenvolvimento',
                 description:
-                    'Sociedade operadora da Aplicação Nacional de Transporte (motoristas e passageiros), integrada com e-Kwanza, stable AOA e Token Nacional para pagamentos de transporte e impostos.',
+                    'Aplicação nacional de transporte (motoristas e passageiros), integrada com e-Kwanza, stable AOA e Token Nacional para pagamentos e impostos.',
             },
             {
-                name: 'PraçaNgola, Lda. (Angola)',
+                name: 'PraçaNgola (Plataforma dentro da CubeShackles, S.A.)',
                 type: 'Infraestrutura de E-commerce',
-                status: 'Planeado',
+                status: 'Em Desenvolvimento',
                 description:
-                    'Veículo jurídico da PraçaNgola — plataforma nacional de e-commerce e logística, posicionada como o “equivalente angolano da Amazon”, suportada pelos rails de pagamentos CubeShackles.',
+                    'Plataforma nacional de e-commerce e logística operada dentro da CubeShackles, S.A., suportada pelos rails de pagamentos CubeShackles.',
             },
             {
                 name: 'Terminal BualaBuitu (Plataforma dentro da CubeShackles, S.A.)',
@@ -70,14 +70,14 @@ const clusters = [
                 type: 'Plataforma Financeira Integrada',
                 status: 'Ativo',
                 description:
-                    'Plataforma financeira integrada, desenhada como um equivalente angolano da combinação KKR + Point72 + TopStep, com capacidade multi-estratégia para operações nacionais.',
+                    'Plataforma financeira integrada para Angola, com mandatos institucionais multi-estratégia e capacidade para operações de escala nacional.',
             },
             {
                 name: 'Biu-g Investment Management, Lda. (Angola)',
                 type: 'Gestão de Ativos',
                 status: 'Planeado / Em Estruturação',
                 description:
-                    'Gestora de ativos exclusivamente AOA, inspirada na ARK Invest. Concebida para operar 15 fundos dedicados, cada um capitalizado com 100M AOA, investindo apenas em ativos angolanos.',
+                    'Veículo de gestão de ativos denominado em AOA, focado na economia angolana e na gestão de risco institucional, sob a regulamentação local aplicável.',
             },
             {
                 name: '1975 Nzila, Lda. (Angola)',

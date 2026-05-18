@@ -91,33 +91,39 @@ export default function CorporateStructurePt() {
 
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">National Data Platform, Lda. (Angola) — Planeada</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">
+                                National Data Platform (Plataforma dentro da CubeShackles, S.A.)
+                            </h3>
                             <p className="text-sm text-zinc-600">
-                                Subsidiária 100% detida pela CubeShackles, S.A. Responsável por dados económicos e sociais
-                                de nível soberano — inflação, desemprego, mercados informais, índices de preços, entre outros.
-                            </p>
-                        </div>
-                        <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">Kulifikila Credit Bureau, Lda. (Angola) — Planeada</h3>
-                            <p className="text-sm text-zinc-600">
-                                Primeira central de risco focada tanto no sector formal como informal, com múltiplas camadas
-                                de scoring em Kwanza (AOA).
+                                Plataforma de dados económicos e sociais de nível soberano — inflação, desemprego, mercados
+                                informais e índices de preços — operada dentro da CubeShackles, S.A.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">
-                                Plataforma Nacional de Transporte (Lda., nome a definir) — Planeada
+                                Kulifikila Credit Bureau (Plataforma dentro da CubeShackles, S.A.)
                             </h3>
                             <p className="text-sm text-zinc-600">
-                                Operadora da aplicação nacional de mobilidade (motoristas e passageiros), integrada com
-                                e-Kwanza, stable AOA e Token Nacional para impostos.
+                                Infraestrutura de crédito para sectores formal e informal, com scoring multi-camada em AOA,
+                                operada dentro da CubeShackles, S.A.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">PraçaNgola, Lda. (Angola) — Planeada</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">
+                                Plataforma Nacional de Transporte de Angola (Plataforma dentro da CubeShackles, S.A.)
+                            </h3>
                             <p className="text-sm text-zinc-600">
-                                Infraestrutura nacional de e-commerce. Os pagamentos são processados na stack CubeShackles
-                                (e-Kwanza, stable AOA, Token Nacional).
+                                Aplicação nacional de mobilidade (motoristas e passageiros), integrada com e-Kwanza, stable
+                                AOA e Token Nacional, operada dentro da CubeShackles, S.A.
+                            </p>
+                        </div>
+                        <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
+                            <h3 className="text-lg font-semibold text-zinc-900">
+                                PraçaNgola (Plataforma dentro da CubeShackles, S.A.)
+                            </h3>
+                            <p className="text-sm text-zinc-600">
+                                Infraestrutura nacional de e-commerce operada dentro da CubeShackles, S.A., com pagamentos
+                                na stack CubeShackles (e-Kwanza, stable AOA, Token Nacional).
                             </p>
                         </div>
                     </div>
@@ -145,8 +151,8 @@ export default function CorporateStructurePt() {
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Grupo FGMS &amp; Associados, Lda. (Angola)</h3>
                             <p className="text-sm text-zinc-600">
-                                Plataforma financeira integrada — equivalente angolano a uma combinação de KKR, Point72 e
-                                TopStep.
+                                Plataforma financeira integrada para Angola, com mandatos institucionais multi-estratégia e
+                                capacidade para operações de escala nacional.
                             </p>
                             <p className="text-sm text-zinc-600">
                                 O capital é detido através de veículos de participação em Portugal e Angola, colaboradores,
@@ -156,11 +162,8 @@ export default function CorporateStructurePt() {
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Biu-g Investment Management, Lda. (Angola)</h3>
                             <p className="text-sm text-zinc-600">
-                                Gestora de ativos inspirada na ARK Invest, com foco exclusivo em Angola.
-                            </p>
-                            <p className="text-sm text-zinc-600">
-                                Mandato: fundos diversificados denominados em AOA, com foco exclusivo na economia angolana e
-                                gestão de risco institucional.
+                                Veículo de gestão de ativos denominado em AOA, focado na economia angolana e na gestão de
+                                risco institucional, sob a regulamentação local aplicável.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
@@ -288,7 +291,10 @@ export default function CorporateStructurePt() {
                                 <li>Grupo FGMS &amp; Associados, Lda. (Angola)</li>
                                 <li>Biu-g Investment Management, Lda. (Angola)</li>
                                 <li>Mucho Dinero Tecnologia &amp; Produção (Angola)</li>
-                                <li>National Data Platform, Kulifikila, PraçaNgola, 1975 Nzila, FGMS &amp; Co, FGM &amp; Co (planeados)</li>
+                                <li>
+                                    National Data Platform, Kulifikila, PraçaNgola, Plataforma Nacional de Transporte
+                                    (plataformas dentro da CubeShackles, S.A.); 1975 Nzila, FGMS &amp; Co, FGM &amp; Co
+                                </li>
                             </ul>
                         </div>
                         <div className="rounded-lg border border-zinc-200 bg-white p-4 md:p-5">

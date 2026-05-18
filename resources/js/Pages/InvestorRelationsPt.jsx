@@ -9,12 +9,12 @@ export default function InvestorRelationsPt() {
                         Relações com Investidores
                     </p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">
-                        Relações com Investidores &amp; Parcerias de Capital
+                        Relações com Investidores &amp; Parcerias Institucionais
                     </h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        A Biu-g Holdings LLC e o ecossistema CubeShackles são desenhados para capital de longa duração e
-                        parcerias institucionais. Esta página centraliza a comunicação com investidores atuais e
-                        potenciais nas nossas entidades nos Estados Unidos, Portugal e Angola.
+                        A Biu-g Holdings LLC está estruturada para capital de longa duração e parcerias institucionais nos
+                        Estados Unidos, Portugal e Angola. Esta página disponibiliza apenas contexto corporativo de alto
+                        nível.
                     </p>
                 </header>
 
@@ -35,85 +35,29 @@ export default function InvestorRelationsPt() {
                 </section>
 
                 <section className="space-y-4">
-                    <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Canais de Contacto para Investidores</h2>
-                    <div className="space-y-3 rounded-lg border border-zinc-200 bg-white p-4 text-sm text-zinc-700 md:p-5">
+                    <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">
+                        Contacto para Investidores &amp; Instituições
+                    </h2>
+                    <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
+                        <p className="text-sm leading-relaxed text-zinc-600">
+                            Investidores institucionais, bancos, parceiros estratégicos, reguladores e entidades
+                            soberanas podem contactar a Biu-g Holdings LLC através do endereço abaixo. Inclua a sua
+                            instituição, jurisdição e área de interesse.
+                        </p>
                         <div>
-                            <p className="font-semibold text-zinc-900">Email IR Principal</p>
-                            <p className="text-zinc-700">
-                                Relações com Investidores:{' '}
-                                <span className="font-medium">support@biu-gholdings.org</span>
-                            </p>
-                        </div>
-                        <div>
-                            <p className="font-semibold text-zinc-900">Pedidos Típicos</p>
-                            <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                                <li>Informação geral sobre a missão e presença jurisdicional do grupo.</li>
-                                <li>Pedidos de introdução institucional e visão geral de governance.</li>
-                                <li>Questões de alinhamento regulatório e estrutura corporativa em alto nível.</li>
-                                <li>Encaminhamento de contactos de media e parcerias.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="space-y-4">
-                    <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Pedido de Informação para Investidores</h2>
-                    <p className="text-sm text-zinc-600">
-                        Utilize o formulário abaixo para enviar um pedido estruturado. A nossa equipa responderá pelo
-                        canal adequado.
-                    </p>
-                    <form className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <div className="grid gap-4 md:grid-cols-2">
-                            <div className="space-y-1">
-                                <label className="text-xs font-medium text-zinc-700">Nome / Instituição</label>
-                                <input
-                                    type="text"
-                                    className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900"
-                                    placeholder="Nome do fundo ou instituição"
-                                />
-                            </div>
-                            <div className="space-y-1">
-                                <label className="text-xs font-medium text-zinc-700">Email</label>
-                                <input
-                                    type="email"
-                                    className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900"
-                                    placeholder="ir@instituicao.com"
-                                />
-                            </div>
-                        </div>
-                        <div className="space-y-1">
-                            <label className="text-xs font-medium text-zinc-700">Tipo de Investidor</label>
-                            <select className="w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900">
-                                <option value="">Selecione</option>
-                                <option value="vc">Venture Capital</option>
-                                <option value="pe">Private Equity</option>
-                                <option value="institutional">Institucional / Pensão / Soberano</option>
-                                <option value="family_office">Family Office</option>
-                                <option value="angel">Angel / Individual</option>
-                                <option value="other">Outro</option>
-                            </select>
-                        </div>
-                        <div className="space-y-1">
-                            <label className="text-xs font-medium text-zinc-700">Áreas de Interesse</label>
-                            <textarea
-                                rows={4}
-                                className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900"
-                                placeholder="Ex.: parceria institucional, visão corporativa, questão de governance, etc."
-                            />
-                        </div>
-                        <div className="pt-2">
-                            <button
-                                type="button"
-                                className="inline-flex items-center justify-center rounded-md border border-zinc-900 bg-zinc-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-black"
+                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Email</p>
+                            <a
+                                href="mailto:support@biu-gholdings.org"
+                                className="mt-1 inline-block text-sm font-medium text-zinc-900 underline"
                             >
-                                Enviar Pedido IR
-                            </button>
-                            <p className="mt-2 text-[11px] text-zinc-500">
-                                Este formulário não constitui uma oferta de valores mobiliários. Nada neste site constitui
-                                aconselhamento de investimento ou solicitação de investimento.
-                            </p>
+                                support@biu-gholdings.org
+                            </a>
                         </div>
-                    </form>
+                        <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">
+                            Este website não constitui uma oferta de venda, solicitação de compra ou recomendação
+                            relativamente a quaisquer valores mobiliários, tokens, fundos ou produtos de investimento.
+                        </p>
+                    </article>
                 </section>
             </div>
         </MainLayout>

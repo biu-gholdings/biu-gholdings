@@ -19,32 +19,32 @@ const clusters = [
                     'National operating company for the CubeShackles rails in Angola. Interfaces with regulators, banks, telecom operators and institutions to run AOA-native financial infrastructure.',
             },
             {
-                name: 'National Data Platform, Lda. (Angola)',
+                name: 'National Data Platform (Platform inside CubeShackles, S.A.)',
                 type: 'Data Platform',
-                status: 'Planned',
+                status: 'In Development',
                 description:
-                    'Wholly-owned subsidiary of CubeShackles, S.A. focused on sovereign-grade economic and social data: inflation, unemployment, informal markets, local price indices and access metrics.',
+                    'Sovereign-grade economic and social data platform — inflation, unemployment, informal markets, local price indices and access metrics — operated within CubeShackles, S.A.',
             },
             {
-                name: 'Kulifikila – Credit Bureau, Lda. (Angola)',
+                name: 'Kulifikila Credit Bureau (Platform inside CubeShackles, S.A.)',
                 type: 'Credit Infrastructure',
-                status: 'Planned',
+                status: 'In Development',
                 description:
-                    'Africa-first credit bureau focused on both formal and informal sectors, operating multi-layer AOA credit scoring and risk intelligence for banks, fintechs and government.',
+                    'Credit infrastructure for formal and informal sectors, with multi-layer AOA credit scoring and risk intelligence for banks, fintechs and government.',
             },
             {
-                name: 'Angola National Transit Platform Company (Lda., name TBD)',
+                name: 'Angola National Transit Platform (Platform inside CubeShackles, S.A.)',
                 type: 'Mobility / Transit',
-                status: 'Planned',
+                status: 'In Development',
                 description:
-                    'Operating company for the National Transit App (drivers and riders), integrated with e-Kwanza, stable AOA and National Token for transport payments and tax rails.',
+                    'National transit application for drivers and riders, integrated with e-Kwanza, stable AOA and National Token for transport payments and tax rails.',
             },
             {
-                name: 'PraçaNgola, Lda. (Angola)',
+                name: 'PraçaNgola (Platform inside CubeShackles, S.A.)',
                 type: 'E-commerce Infrastructure',
-                status: 'Planned',
+                status: 'In Development',
                 description:
-                    'Legal vehicle for PraçaNgola — a national e-commerce and logistics platform targeting “Angola’s Amazon equivalent”, powered by CubeShackles payments and tax rails.',
+                    'National e-commerce and logistics platform operated within CubeShackles, S.A., powered by CubeShackles payments and tax rails.',
             },
             {
                 name: 'BualaBuitu Terminal (Platform inside CubeShackles, S.A.)',
@@ -70,14 +70,14 @@ const clusters = [
                 type: 'Integrated Financial Platform',
                 status: 'Active',
                 description:
-                    'Integrated financial platform modeled as a combined KKR + Point72 + TopStep equivalent for Angola, holding multi-strategy, multi-vehicle capabilities for national deals.',
+                    'Integrated financial platform for Angola, supporting multi-strategy institutional mandates and national-scale transactions.',
             },
             {
                 name: 'Biu-g Investment Management, Lda. (Angola)',
                 type: 'Asset Management',
                 status: 'Planned / In Formation',
                 description:
-                    'AOA-only asset manager inspired by ARK Invest. Designed to operate 15 dedicated funds, each capitalized with 100M AOA, investing exclusively in Angolan assets.',
+                    'AOA-denominated asset management vehicle focused on Angolan assets and institutional risk management, operating under applicable local regulation.',
             },
             {
                 name: '1975 Nzila, Lda. (Angola)',
