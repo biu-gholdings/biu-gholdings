@@ -42,8 +42,7 @@ export default function ContactPt() {
                 <section className="space-y-4">
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Enviar Mensagem</h2>
                     <p className="text-sm text-zinc-600">
-                        Este formulário é apenas a estrutura de frontend. A sua equipa técnica pode ligá-lo ao backend
-                        preferido (controlador Laravel, pipeline de notificações, CRM, etc.).
+                        Envie um pedido geral. A nossa equipa responderá pelo canal adequado.
                     </p>
                     <form className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <div className="grid gap-4 md:grid-cols-2">
@@ -92,8 +91,11 @@ export default function ContactPt() {
                                 Submeter
                             </button>
                             <p className="mt-2 text-[11px] text-zinc-500">
-                                Nota: Este botão ainda não está ligado a um backend. A sua equipa técnica pode conectar
-                                ao fluxo de submissão preferido.
+                                Para pedidos gerais, envie email para{' '}
+                                <a href="mailto:support@biu-gholdings.org" className="underline">
+                                    support@biu-gholdings.org
+                                </a>
+                                .
                             </p>
                         </div>
                     </form>

@@ -57,9 +57,8 @@ export default function CorporateStructure() {
                                 institutions.
                             </p>
                             <p className="text-sm text-zinc-600">
-                                <span className="font-medium">Equity role:</span> owns{' '}
-                                <span className="font-medium">29% of Biu-g SGPS (Portugal)</span> and holds direct shares
-                                in <span className="font-medium">CubeShackles, S.A. (Angola)</span>.
+                                <span className="font-medium">Equity role:</span> participation in European holding
+                                structures and direct interests in key Angola operating companies.
                             </p>
                         </div>
                     </div>
@@ -75,34 +74,22 @@ export default function CorporateStructure() {
                             Global technology and IP company. Owns the SmartShackles engine, DAG protocol, developer
                             ecosystem, and global licensing.
                         </p>
-                        <p className="text-sm font-medium text-zinc-700">Ownership structure</p>
-                        <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                            <li>Founders &amp; retained — 47.10%</li>
-                            <li>Biu-g SGPS (Portugal) — 8.00%</li>
-                            <li>Pre-seed investors — 14.90%</li>
-                            <li>Future NASDAQ IPO investors — 20.00%</li>
-                            <li>Strategic investors — Vanguard, ARK, Circle, Coinbase, etc.</li>
-                            <li>Holds 25% of CubeShackles, S.A. (Angola).</li>
-                        </ul>
+                        <p className="text-sm text-zinc-600">
+                            Ownership is distributed among founders, institutional partners, and long-term capital
+                            aligned with the group’s technology mandate. Specific interests in Angola operating
+                            companies are held through the appropriate participation vehicles.
+                        </p>
                     </div>
 
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <h3 className="text-lg font-semibold text-zinc-900">CubeShackles, S.A. (Angola)</h3>
                         <p className="text-sm text-zinc-600">National operating company for the CubeShackles ecosystem.</p>
-                        <p className="text-sm font-medium text-zinc-700">Key shareholders</p>
-                        <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                            <li>CubeShackles, Inc. — 25.00%</li>
-                            <li>Unitel, Movicel, Africell</li>
-                            <li>Banco Nacional de Angola (BNA) — 2.00%</li>
-                            <li>Opaia, Angola Capital Partners (FIPA), Angola Telecom</li>
-                            <li>BFA Asset Management – Kimbo Fund — 0.75%</li>
-                            <li>Ministério das Finanças (MinFin) — 2.00%</li>
-                            <li>Ministério dos Transportes (MinTrans) — 2.00%</li>
-                            <li>Biu-g SGPS (Angola) — 6.15%</li>
-                            <li>Employees &amp; vested options — 12.00%</li>
-                            <li>BODIVA IPO Reserve — 25.00%</li>
-                            <li>Strategic Reserve — 5.00%</li>
-                        </ul>
+                        <p className="text-sm text-zinc-600">
+                            Shareholding includes the global technology parent, national strategic partners, institutional
+                            investors, and employee participation mechanisms designed for long-term alignment. Public
+                            disclosure is limited to structural roles; detailed registers are maintained through
+                            appropriate private and regulatory channels.
+                        </p>
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-2">
@@ -165,19 +152,17 @@ export default function CorporateStructure() {
                                 Integrated financial powerhouse — the equivalent of a combined KKR, Point72 and TopStep
                                 for Angola.
                             </p>
-                            <p className="text-sm font-medium text-zinc-700">Ownership</p>
-                            <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                                <li>Sociedade de Participações BIU-G, Lda. (Portugal) — 25%</li>
-                                <li>Sociedade de Participações BIU-G, Lda. (Angola) — 29%</li>
-                                <li>Remaining equity allocated across employees, local partners, and other investors.</li>
-                            </ul>
+                            <p className="text-sm text-zinc-600">
+                                Equity is held through participation vehicles in Portugal and Angola, alongside
+                                employees, local partners, and institutional co-investors.
+                            </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Biu-g Investment Management, Lda. (Angola)</h3>
                             <p className="text-sm text-zinc-600">ARK Invest–style asset manager operating exclusively in Angola.</p>
                             <p className="text-sm text-zinc-600">
-                                Mandate: 15 AOA-denominated funds, each capitalized with 100M AOA and investing only in
-                                Angolan assets.
+                                Mandate: diversified AOA-denominated funds focused exclusively on Angolan assets and
+                                institutional risk management.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
@@ -270,8 +255,8 @@ export default function CorporateStructure() {
                         8. Additional Products &amp; Future Legal Entities
                     </h2>
                     <p className="text-sm text-zinc-600">
-                        The following platforms currently operate as products or internal initiatives and can be converted
-                        into standalone legal entities as the ecosystem scales:
+                        The following platforms are part of the group portfolio and may be organized as standalone
+                        legal entities as the ecosystem scales:
                     </p>
                     <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
                         <li>Biu-g Care (insurance vertical)</li>

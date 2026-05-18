@@ -1,81 +1,45 @@
-# Biu-g Holdings LLC — Corporate Website
+# Biu-g Holdings LLC
 
-Institutional, static-first corporate site for **biu-gholdings.org**: bilingual (EN/PT), regulator-oriented, minimal.
+Biu-g Holdings LLC is a global parent and holding company focused on sovereign-grade financial infrastructure, digital systems, data, education, and institutional platforms for **Angola** and **Africa**.
 
-> **Deployment:** **biu-gholdings.org** uses the **`gh-pages`** branch (Vite static export via GitHub Actions). Source, `docs/`, and PDFs stay private on `develop`. **First deploy:** [deploy/FIRST-DEPLOYMENT.md](deploy/FIRST-DEPLOYMENT.md) · [deploy/GITHUB-PAGES-SETUP.md](deploy/GITHUB-PAGES-SETUP.md).
+## Jurisdictions
 
-## Overview
+The group operates with jurisdictional clarity across the **United States**, **Portugal**, and **Angola**.
 
-Official gateway to Biu-g Holdings LLC across the United States, Portugal, and Angola. The stack is intentionally simple for v1:
+## This repository
 
-- **Laravel 12** (routing, Inertia responses)
-- **Inertia.js** + **React**
-- **Tailwind CSS** (utility-first)
-- **Vite** (bundler)
-- **Ziggy** (named routes on the frontend)
+This public repository contains:
 
-v1 is **static-first**: page content lives in React components. **No database**, **no authentication**, and **no third-party analytics/tracking scripts** in this phase.
+- The **corporate website** source (bilingual EN/PT) for [biu-gholdings.org](https://biu-gholdings.org)
+- Selected **public governance** and transparency materials under `docs/`
 
-## Documentation
+## Public principles
 
-| Document | Description |
-|----------|-------------|
-| [docs/site-architecture.md](docs/site-architecture.md) | Technical conventions, directory layout, route pairing |
-| [docs/cto-checklist.md](docs/cto-checklist.md) | CTO execution checklist through launch |
-| [docs/deployment-guide.md](docs/deployment-guide.md) | Production deployment steps |
-| [docs/sitemap-diagram.md](docs/sitemap-diagram.md) | Route map and sitemap notes |
-| [docs/content-governance.md](docs/content-governance.md) | Content rules, approvals, EN/PT parity |
-| [docs/DEV-ONBOARDING.md](docs/DEV-ONBOARDING.md) | Developer setup and contribution standards |
-| [docs/github-backlog.md](docs/github-backlog.md) | GitHub issues backlog and milestones (from internal spec) |
-| [docs/figma-ui-kit.md](docs/figma-ui-kit.md) | Figma / UI consistency spec |
+- **Transparency** in how we describe our corporate mission and structure  
+- **Regulatory alignment** and respect for applicable authorities in each jurisdiction  
+- **Jurisdictional clarity** in entity roles and geographic footprint  
+- **Long-term infrastructure discipline** — building durable systems, not short-term narratives  
 
-Internal PDF sources are stored under [docs/source/](docs/source/README.md).
+## Technology
 
-## Requirements
+The public site is built with Laravel, Inertia, React, and Tailwind. Production web hosting is served as a static export on GitHub Pages (`gh-pages` branch).
 
-- PHP **8.2+** (see `composer.json` for framework version)
-- Composer
-- Node.js **18+** and npm
+## Contributing
 
-## Local development
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
-```bash
-composer install
-cp .env.example .env   # if .env does not exist
-php artisan key:generate
-npm install
-php artisan serve
-```
+## Security
 
-In another terminal:
+See [SECURITY.md](SECURITY.md) for responsible vulnerability disclosure.
 
-```bash
-npm run dev
-```
+## Disclaimer
 
-## Production assets
-
-```bash
-npm run build
-php artisan optimize
-```
-
-## Internal manual PDF (optional)
-
-To regenerate a single internal manual PDF for governance review, export the following in order and merge:
-
-1. `README.md`
-2. `docs/site-architecture.md`
-3. `docs/cto-checklist.md`
-4. `docs/DEV-ONBOARDING.md`
-5. `docs/deployment-guide.md`
-6. `docs/sitemap-diagram.md`
-7. `docs/content-governance.md`
-
-Suggested filename: `Biu-g_Corporate_Web_Manual_v1.pdf`.
+This repository and website are for **general corporate information** only. Nothing here constitutes an offer to sell or a solicitation to buy any security or investment product.
 
 ## License
 
-Proprietary. © Biu-g Holdings LLC. All rights reserved.
+See [LICENSE](LICENSE).
 
-**Contact:** support@biu-gholdings.org
+## Contact
+
+**support@biu-gholdings.org**

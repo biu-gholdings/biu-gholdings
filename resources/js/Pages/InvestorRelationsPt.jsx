@@ -22,15 +22,14 @@ export default function InvestorRelationsPt() {
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Visão Geral da Estrutura de Capital</h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 text-sm text-zinc-700 md:p-5">
                         <p>
-                            O grupo é organizado em torno da Biu-g Holdings LLC (EUA) como entidade-mãe global, com
-                            veículos de participações e empresas operacionais em Portugal e Angola. A CubeShackles, Inc.
-                            (Delaware C-Corp) e a CubeShackles, S.A. (Angola) representam a camada core de tecnologia e
-                            infraestrutura nacional, com futuros caminhos de IPO na NASDAQ e na BODIVA.
+                            O grupo é organizado em torno da Biu-g Holdings LLC (Estados Unidos) como entidade-mãe global,
+                            com veículos de participação e empresas operacionais em Portugal e Angola. As atividades core
+                            de tecnologia e infraestrutura nacional são conduzidas através de entidades afiliadas do
+                            ecossistema CubeShackles.
                         </p>
                         <p className="text-xs text-zinc-500">
-                            Cap tables detalhadas, term sheets e documentos de oferta são disponibilizados diretamente a
-                            investidores qualificados e instituições mediante pedido e não são divulgados integralmente
-                            neste website público.
+                            Informação financeira, jurídica e transacional detalhada é partilhada com instituições
+                            qualificadas através de canais privados apropriados e não é publicada neste website.
                         </p>
                     </div>
                 </section>
@@ -48,10 +47,10 @@ export default function InvestorRelationsPt() {
                         <div>
                             <p className="font-semibold text-zinc-900">Pedidos Típicos</p>
                             <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                                <li>Acesso à apresentação mais recente e materiais de dual-IPO da CubeShackles.</li>
-                                <li>Informação sobre rondas pre-seed, seed e fases posteriores.</li>
-                                <li>Detalhes sobre veículos específicos de Angola (FGMS, Biu-g Investment Management, etc.).</li>
-                                <li>Esclarecimentos sobre governance, estruturas de voto e alinhamento regulatório.</li>
+                                <li>Informação geral sobre a missão e presença jurisdicional do grupo.</li>
+                                <li>Pedidos de introdução institucional e visão geral de governance.</li>
+                                <li>Questões de alinhamento regulatório e estrutura corporativa em alto nível.</li>
+                                <li>Encaminhamento de contactos de media e parcerias.</li>
                             </ul>
                         </div>
                     </div>
@@ -60,8 +59,8 @@ export default function InvestorRelationsPt() {
                 <section className="space-y-4">
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Pedido de Informação para Investidores</h2>
                     <p className="text-sm text-zinc-600">
-                        Utilize o formulário abaixo para enviar um pedido estruturado de informação. A sua equipa pode
-                        ligá-lo a uma rota backend privada, CRM ou fluxo de acesso a data room.
+                        Utilize o formulário abaixo para enviar um pedido estruturado. A nossa equipa responderá pelo
+                        canal adequado.
                     </p>
                     <form className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <div className="grid gap-4 md:grid-cols-2">
@@ -99,7 +98,7 @@ export default function InvestorRelationsPt() {
                             <textarea
                                 rows={4}
                                 className="w-full rounded-md border border-zinc-300 px-3 py-2 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900"
-                                placeholder="Ex.: pre-seed CubeShackles, fundos FGMS em Angola, National Data Platform, Terminal BualaBuitu, etc."
+                                placeholder="Ex.: parceria institucional, visão corporativa, questão de governance, etc."
                             />
                         </div>
                         <div className="pt-2">
@@ -110,8 +109,8 @@ export default function InvestorRelationsPt() {
                                 Enviar Pedido IR
                             </button>
                             <p className="mt-2 text-[11px] text-zinc-500">
-                                Nota: Este formulário é apenas frontend. A sua equipa pode implementar routing seguro,
-                                autenticação e acesso a data room conforme necessário.
+                                Este formulário não constitui uma oferta de valores mobiliários. Nada neste site constitui
+                                aconselhamento de investimento ou solicitação de investimento.
                             </p>
                         </div>
                     </form>

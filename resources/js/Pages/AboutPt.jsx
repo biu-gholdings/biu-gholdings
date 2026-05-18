@@ -55,7 +55,7 @@ export default function AboutPt() {
                             </h3>
                             <p className="mt-1 text-xs text-zinc-600">
                                 Através da CubeShackles, da Biu-g Investment Management e do grupo FGMS, desenhamos rails
-                                robustos nativos em AOA, sistemas de yield, infraestrutura de crédito e veículos
+                                robustos nativos em AOA, infraestrutura de crédito e veículos
                                 institucionais orientados para os mercados de capitais e reguladores angolanos.
                             </p>
                         </div>
@@ -102,7 +102,7 @@ export default function AboutPt() {
                     </p>
                     <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
                         <li>Residência legal e fiscal clara para cada empresa operacional.</li>
-                        <li>Cap tables transparentes e veículos de participação para parceiros locais e globais.</li>
+                        <li>Veículos de participação claros para parceiros institucionais locais e globais.</li>
                         <li>
                             Caminhos de conformidade com bancos centrais, reguladores de mercados de capitais e
                             autoridades tributárias.

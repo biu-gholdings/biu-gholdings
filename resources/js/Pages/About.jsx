@@ -57,8 +57,8 @@ export default function About() {
                             </h3>
                             <p className="mt-1 text-xs text-zinc-600">
                                 Through CubeShackles, Biu-g Investment Management and the FGMS group, we design robust
-                                AOA-native rails, yield systems, credit infrastructure and institutional vehicles built
-                                for Angola’s capital markets and regulators.
+                                AOA-native rails, credit infrastructure, and institutional vehicles built for Angola’s
+                                capital markets and regulators.
                             </p>
                         </div>
                         <div className="rounded-lg border border-zinc-200 bg-white p-4">
@@ -104,7 +104,7 @@ export default function About() {
                     </p>
                     <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
                         <li>Clear legal and tax residency for each operating company.</li>
-                        <li>Transparent cap tables and participation vehicles for local and global partners.</li>
+                        <li>Clear participation vehicles for local and global institutional partners.</li>
                         <li>
                             Compliance pathways with central banks, capital markets regulators and tax agencies.
                         </li>

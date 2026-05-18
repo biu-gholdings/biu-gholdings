@@ -138,8 +138,8 @@ for (const file of allFiles) {
 }
 
 const indexHtml = readFileSync(join(publishDir, 'index.html'), 'utf8');
-if (indexHtml.includes('markdown-body') || indexHtml.includes('jekyll')) {
-    errors.push('index.html looks like legacy README/Jekyll output');
+if (indexHtml.includes('markdown-body') || indexHtml.toLowerCase().includes('jekyll')) {
+    errors.push('index.html looks like README/Jekyll output, not the corporate frontend');
 }
 if (!indexHtml.includes('/assets/') || !indexHtml.includes('id="app"')) {
     errors.push('index.html is not a valid institutional frontend shell');

@@ -43,8 +43,7 @@ export default function Contact() {
                 <section className="space-y-4">
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Send a Message</h2>
                     <p className="text-sm text-zinc-600">
-                        This form is a frontend shell. Your development team can connect it to your preferred backend
-                        (Laravel controller, notification pipeline, CRM, etc.).
+                        Submit a general inquiry. A member of our team will respond through the appropriate channel.
                     </p>
                     <form className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <div className="grid gap-4 md:grid-cols-2">
@@ -93,8 +92,11 @@ export default function Contact() {
                                 Submit
                             </button>
                             <p className="mt-2 text-[11px] text-zinc-500">
-                                Note: This button is not wired to a backend yet. Your technical team can connect it to
-                                your preferred submission flow.
+                                For general inquiries, email{' '}
+                                <a href="mailto:support@biu-gholdings.org" className="underline">
+                                    support@biu-gholdings.org
+                                </a>
+                                .
                             </p>
                         </div>
                     </form>

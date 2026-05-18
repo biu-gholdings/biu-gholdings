@@ -55,9 +55,8 @@ export default function CorporateStructurePt() {
                                 instituições nacionais.
                             </p>
                             <p className="text-sm text-zinc-600">
-                                <span className="font-medium">Papel acionista:</span> detém{' '}
-                                <span className="font-medium">29% da Biu-g SGPS (Portugal)</span> e participação direta na{' '}
-                                <span className="font-medium">CubeShackles, S.A. (Angola)</span>.
+                                <span className="font-medium">Papel acionista:</span> participação em estruturas de
+                                holding europeias e interesses diretos em empresas operacionais angolanas.
                             </p>
                         </div>
                     </div>
@@ -73,15 +72,10 @@ export default function CorporateStructurePt() {
                             Empresa global de tecnologia e propriedade intelectual. Detém o motor SmartShackles, o protocolo
                             DAG, o ecossistema de developers e o licenciamento global.
                         </p>
-                        <p className="text-sm font-medium text-zinc-700">Estrutura acionista</p>
-                        <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                            <li>Fundadores &amp; ações retidas — 47,10%</li>
-                            <li>Biu-g SGPS (Portugal) — 8,00%</li>
-                            <li>Investidores pre-seed — 14,90%</li>
-                            <li>Investidores IPO NASDAQ (futuro) — 20,00%</li>
-                            <li>Investidores estratégicos — Vanguard, ARK, Circle, Coinbase, etc.</li>
-                            <li>Detém 25% da CubeShackles, S.A. (Angola).</li>
-                        </ul>
+                        <p className="text-sm text-zinc-600">
+                            O capital está distribuído entre fundadores, parceiros institucionais e capital de longo
+                            prazo alinhado com o mandato tecnológico do grupo.
+                        </p>
                     </div>
 
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
@@ -89,20 +83,10 @@ export default function CorporateStructurePt() {
                         <p className="text-sm text-zinc-600">
                             Sociedade anónima angolana que opera o ecossistema CubeShackles no território nacional.
                         </p>
-                        <p className="text-sm font-medium text-zinc-700">Principais acionistas</p>
-                        <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                            <li>CubeShackles, Inc. — 25,00%</li>
-                            <li>Unitel, Movicel, Africell</li>
-                            <li>Banco Nacional de Angola (BNA) — 2,00%</li>
-                            <li>Opaia, Angola Capital Partners (FIPA), Angola Telecom</li>
-                            <li>BFA Asset Management – Fundo Kimbo — 0,75%</li>
-                            <li>Ministério das Finanças (MinFin) — 2,00%</li>
-                            <li>Ministério dos Transportes (MinTrans) — 2,00%</li>
-                            <li>Biu-g SGPS (Angola) — 6,15%</li>
-                            <li>Colaboradores &amp; opções — 12,00%</li>
-                            <li>Reserva IPO BODIVA — 25,00%</li>
-                            <li>Reserva estratégica — 5,00%</li>
-                        </ul>
+                        <p className="text-sm text-zinc-600">
+                            A estrutura acionista inclui a entidade-mãe tecnológica global, parceiros estratégicos
+                            nacionais, investidores institucionais e mecanismos de participação de colaboradores.
+                        </p>
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-2">
@@ -164,12 +148,10 @@ export default function CorporateStructurePt() {
                                 Plataforma financeira integrada — equivalente angolano a uma combinação de KKR, Point72 e
                                 TopStep.
                             </p>
-                            <p className="text-sm font-medium text-zinc-700">Estrutura acionista</p>
-                            <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
-                                <li>Sociedade de Participações BIU-G, Lda. (Portugal) — 25%</li>
-                                <li>Sociedade de Participações BIU-G, Lda. (Angola) — 29%</li>
-                                <li>Restante capital distribuído por colaboradores, parceiros locais e investidores.</li>
-                            </ul>
+                            <p className="text-sm text-zinc-600">
+                                O capital é detido através de veículos de participação em Portugal e Angola, colaboradores,
+                                parceiros locais e co-investidores institucionais.
+                            </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Biu-g Investment Management, Lda. (Angola)</h3>
@@ -177,8 +159,8 @@ export default function CorporateStructurePt() {
                                 Gestora de ativos inspirada na ARK Invest, com foco exclusivo em Angola.
                             </p>
                             <p className="text-sm text-zinc-600">
-                                Mandato: 15 fundos denominados em AOA, cada um capitalizado com 100M AOA e a investir apenas
-                                na economia angolana.
+                                Mandato: fundos diversificados denominados em AOA, com foco exclusivo na economia angolana e
+                                gestão de risco institucional.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
