@@ -1,4 +1,5 @@
 import MainLayout from '@/Layouts/MainLayout';
+import { linkAcademyInText } from '@/lib/publicLinks';
 
 export default function About() {
     return (
@@ -86,9 +87,9 @@ export default function About() {
                                 4. Education, Talent &amp; Fiduciary Stewardship
                             </h3>
                             <p className="mt-1 text-xs text-zinc-600">
-                                BIU.G Academy and the fiduciary structures behind the group are built to protect
-                                workers, align executives and train the next generation of African builders and
-                                institutional leaders.
+                                {linkAcademyInText(
+                                    'BIU.G Academy and the fiduciary structures behind the group are built to protect workers, align executives and train the next generation of African builders and institutional leaders.',
+                                )}
                             </p>
                         </div>
                     </div>

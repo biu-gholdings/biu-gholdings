@@ -1,4 +1,5 @@
 import MainLayout from '@/Layouts/MainLayout';
+import { renderLinkedEntityName } from '@/lib/publicLinks';
 
 const clusters = [
     {
@@ -163,7 +164,9 @@ export default function Subsidiaries() {
                                     className="flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-4 md:p-5"
                                 >
                                     <div className="space-y-1">
-                                        <h3 className="text-sm font-semibold text-zinc-900">{item.name}</h3>
+                                        <h3 className="text-sm font-semibold text-zinc-900">
+                                            {renderLinkedEntityName(item.name, 'font-semibold')}
+                                        </h3>
                                         {item.platform && (
                                             <p className="text-[11px] font-medium text-zinc-500">{item.platform}</p>
                                         )}

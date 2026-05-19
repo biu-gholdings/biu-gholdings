@@ -1,4 +1,6 @@
+import AcademyLink from '@/Components/AcademyLink';
 import MainLayout from '@/Layouts/MainLayout';
+import { linkAcademyInText } from '@/lib/publicLinks';
 
 export default function CorporateStructure() {
     return (
@@ -224,11 +226,13 @@ export default function CorporateStructure() {
                         6. Education &amp; National Capacity Building
                     </h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">
+                            <AcademyLink className="font-semibold" />
+                        </h3>
                         <p className="text-sm text-zinc-600">
-                            BIU.G Academy is an active educational and capacity-building initiative focused on technology,
-                            financial literacy, digital infrastructure, and AI-native workforce development across Angola and
-                            Africa.
+                            {linkAcademyInText(
+                                'BIU.G Academy is an active educational and capacity-building initiative focused on technology, financial literacy, digital infrastructure, and AI-native workforce development across Angola and Africa.',
+                            )}
                         </p>
                         <p className="text-sm text-zinc-600">
                             The initiative supports long-term ecosystem development through research, training, technical
@@ -293,7 +297,9 @@ export default function CorporateStructure() {
                             <ul className="list-inside list-disc space-y-1 text-xs text-zinc-600">
                                 <li>Fundo Fiduciário Estratégico (Angola)</li>
                                 <li>Sango Trust</li>
-                                <li>BIU.G Academy</li>
+                                <li>
+                                    <AcademyLink />
+                                </li>
                             </ul>
                         </div>
                     </div>

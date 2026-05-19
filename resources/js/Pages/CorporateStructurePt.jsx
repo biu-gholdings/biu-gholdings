@@ -1,4 +1,6 @@
+import AcademyLink from '@/Components/AcademyLink';
 import MainLayout from '@/Layouts/MainLayout';
+import { linkAcademyInText } from '@/lib/publicLinks';
 
 export default function CorporateStructurePt() {
     return (
@@ -219,11 +221,13 @@ export default function CorporateStructurePt() {
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">6. Educação &amp; Capacitação Nacional</h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">
+                            <AcademyLink className="font-semibold" />
+                        </h3>
                         <p className="text-sm text-zinc-600">
-                            A BIU.G Academy é uma iniciativa ativa de educação e capacitação, focada em tecnologia,
-                            literacia financeira, infraestrutura digital e desenvolvimento de talento nativo em IA em Angola
-                            e África.
+                            {linkAcademyInText(
+                                'A BIU.G Academy é uma iniciativa ativa de educação e capacitação, focada em tecnologia, literacia financeira, infraestrutura digital e desenvolvimento de talento nativo em IA em Angola e África.',
+                            )}
                         </p>
                         <p className="text-sm text-zinc-600">
                             A iniciativa apoia o desenvolvimento de longo prazo do ecossistema através de investigação,
@@ -288,7 +292,9 @@ export default function CorporateStructurePt() {
                             <ul className="list-inside list-disc space-y-1 text-xs text-zinc-600">
                                 <li>Fundo Fiduciário Estratégico (Angola)</li>
                                 <li>Sango Trust</li>
-                                <li>BIU.G Academy</li>
+                                <li>
+                                    <AcademyLink />
+                                </li>
                             </ul>
                         </div>
                     </div>

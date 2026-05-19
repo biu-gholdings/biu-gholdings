@@ -1,4 +1,5 @@
 import MainLayout from '@/Layouts/MainLayout';
+import { linkAcademyInText, renderLinkedEntityName } from '@/lib/publicLinks';
 
 const executives = [
     {
@@ -39,7 +40,9 @@ export default function LeadershipPt() {
                                 className="flex h-full flex-col rounded-lg border border-zinc-200 bg-white p-4 md:p-5"
                             >
                                 <div className="space-y-1">
-                                    <h3 className="text-base font-semibold text-zinc-900">{exec.name}</h3>
+                                    <h3 className="text-base font-semibold text-zinc-900">
+                                        {renderLinkedEntityName(exec.name, 'font-semibold')}
+                                    </h3>
                                     <p className="text-xs font-medium text-zinc-700">{exec.role}</p>
                                     {exec.location && (
                                         <p className="text-[11px] text-zinc-500">{exec.location}</p>
@@ -65,9 +68,9 @@ export default function LeadershipPt() {
                         <li>Canais formais de relação com reguladores e parceiros institucionais.</li>
                     </ul>
                     <p className="text-sm text-zinc-600">
-                        O objetivo é simples: garantir que cada plataforma core — CubeShackles, FGMS, PraçaNgola, National
-                        Data Platform, BIU.G Academy — opera com o mesmo grau de disciplina esperado de instituições
-                        globais, mantendo ao mesmo tempo um enraizamento real na realidade angolana.
+                        {linkAcademyInText(
+                            'O objetivo é simples: garantir que cada plataforma core — CubeShackles, FGMS, PraçaNgola, National Data Platform, BIU.G Academy — opera com o mesmo grau de disciplina esperado de instituições globais, mantendo ao mesmo tempo um enraizamento real na realidade angolana.',
+                        )}
                     </p>
                 </section>
             </div>

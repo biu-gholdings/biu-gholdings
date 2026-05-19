@@ -1,3 +1,4 @@
+import AcademyLink from '@/Components/AcademyLink';
 import ContactInquiryForm from '@/Components/ContactInquiryForm';
 import MainLayout from '@/Layouts/MainLayout';
 
@@ -22,8 +23,8 @@ export default function ContactPt() {
                 <section className="rounded-lg border border-zinc-200 bg-white p-4 text-sm text-zinc-700 md:p-5">
                     <p className="font-semibold text-zinc-900">Jurisdições</p>
                     <p className="mt-2 text-zinc-700">
-                        Estados Unidos (Biu-g Holdings) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM Capital,
-                        FGMS, BIU.G Academy e futuras subsidiárias)
+                        Estados Unidos (Biu-g Holdings) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM Capital, FGMS,{' '}
+                        <AcademyLink /> e futuras subsidiárias)
                     </p>
                 </section>
             </div>
