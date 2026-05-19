@@ -2,7 +2,7 @@ import MainLayout from '@/Layouts/MainLayout';
 
 const executives = [
     {
-        name: 'Fábio Guilherme Massanga',
+        name: 'Fábio G. Massanga',
         role: 'Sócio-Gerente, Fundador, Presidente & CEO da CubeShackles, Inc.',
         location: 'Angola / Estados Unidos',
         bio: 'Sócio-Gerente da Biu-g Holdings e Presidente & CEO da CubeShackles, Inc. Lidera a estratégia de longo prazo do grupo entre Angola, Portugal e Estados Unidos, com foco em infraestrutura financeira de nível institucional, sistemas digitais, plataformas nacionais e alinhamento regulatório.',
