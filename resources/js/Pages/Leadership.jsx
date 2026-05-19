@@ -4,8 +4,8 @@ const executives = [
     {
         name: 'Fábio Guilherme Massanga',
         role: 'Managing Member, Founder, President & CEO of CubeShackles, Inc.',
-        location: 'Cabinda, Angola / United States',
-        bio: 'Founder of Biu-g Holdings and President & CEO of CubeShackles, Inc. Leads the group’s long-term strategy across Angola, Portugal and the United States, with a focus on institutional-grade financial infrastructure, digital systems, national platforms and regulated market alignment.',
+        location: 'Angola / United States',
+        bio: 'Managing Member of Biu-g Holdings and President & CEO of CubeShackles, Inc. Leads the group’s long-term strategy across Angola, Portugal and the United States, with a focus on institutional-grade financial infrastructure, digital systems, national platforms and regulated market alignment.',
     },
     {
         name: 'José Quembi',
