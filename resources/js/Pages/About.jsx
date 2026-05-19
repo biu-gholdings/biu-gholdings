@@ -2,7 +2,7 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function About() {
     return (
-        <MainLayout title="About – Biu-g Holdings LLC">
+        <MainLayout title="About – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -12,7 +12,7 @@ export default function About() {
                         Building Africa’s Institutional Infrastructure for the Next 50 Years
                     </h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC is a global holdings platform created to architect the next generation of
+                        Biu-g Holdings is a global holdings platform created to architect the next generation of
                         financial, technological and institutional infrastructure for Angola and Africa. We operate
                         across jurisdictions — United States, Portugal and Angola — with one mandate: build systems
                         that outlive market cycles and political cycles.
@@ -23,7 +23,7 @@ export default function About() {
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4">
                         <h2 className="text-sm font-semibold text-zinc-900">Mission</h2>
                         <p className="text-xs text-zinc-600">
-                            To design, own and operate sovereign-grade platforms that turn African economies into
+                            To design, own and operate institutional-grade platforms that turn African economies into
                             investable, transparent and interoperable systems — starting with Angola.
                         </p>
                     </div>

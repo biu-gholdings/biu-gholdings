@@ -2,15 +2,15 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function CorporateStructurePt() {
     return (
-        <MainLayout title="Estrutura Corporativa – Biu-g Holdings LLC">
+        <MainLayout title="Estrutura Corporativa – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                        Biu-g Holdings LLC
+                        Biu-g Holdings
                     </p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Estrutura Corporativa</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        A Biu-g Holdings LLC opera através de uma estrutura multi-camada nos Estados Unidos, Portugal e
+                        A Biu-g Holdings opera através de uma estrutura multi-camada nos Estados Unidos, Portugal e
                         Angola. Esta página descreve entidades controladas pelo grupo e veículos planeados apenas para
                         transparência pública.
                     </p>
@@ -257,7 +257,7 @@ export default function CorporateStructurePt() {
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">Vista Agregada — Como o Grupo Se Organiza</h2>
                     <p className="text-sm text-zinc-600">
-                        A alto nível, a Biu-g Holdings LLC exerce controlo e direção estratégica através de três pilares:
+                        A alto nível, a Biu-g Holdings exerce controlo e direção estratégica através de três pilares:
                     </p>
                     <div className="grid gap-4 md:grid-cols-3">
                         <div className="rounded-lg border border-zinc-200 bg-white p-4 md:p-5">

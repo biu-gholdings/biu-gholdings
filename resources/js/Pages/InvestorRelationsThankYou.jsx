@@ -3,13 +3,13 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function InvestorRelationsThankYou() {
     return (
-        <MainLayout title="Investor Inquiry Received – Biu-g Holdings LLC">
+        <MainLayout title="Investor Inquiry Received – Biu-g Holdings">
             <div className="mx-auto max-w-2xl space-y-8 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Investor Relations</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Investor Inquiry Received</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Thank you. Your inquiry has been received by Biu-g Holdings LLC. Our team will review the
+                        Thank you. Your inquiry has been received by Biu-g Holdings. Our team will review the
                         submission and respond through the appropriate institutional channel if there is a fit.
                     </p>
                 </header>

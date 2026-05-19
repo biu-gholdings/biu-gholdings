@@ -2,7 +2,7 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function AboutPt() {
     return (
-        <MainLayout title="Sobre – Biu-g Holdings LLC">
+        <MainLayout title="Sobre – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Sobre a Biu-g Holdings</p>
@@ -10,7 +10,7 @@ export default function AboutPt() {
                         A Construção da Infraestrutura Institucional de África para os Próximos 50 Anos
                     </h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        A Biu-g Holdings LLC é uma plataforma global de holdings criada para arquitetar a próxima geração
+                        A Biu-g Holdings é uma plataforma global de holdings criada para arquitetar a próxima geração
                         de infraestrutura financeira, tecnológica e institucional para Angola e África. Operamos entre os
                         Estados Unidos, Portugal e Angola com um único mandato: construir sistemas que sobrevivem a ciclos
                         de mercado e ciclos políticos.
@@ -21,7 +21,7 @@ export default function AboutPt() {
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4">
                         <h2 className="text-sm font-semibold text-zinc-900">Missão</h2>
                         <p className="text-xs text-zinc-600">
-                            Desenhar, deter e operar plataformas de nível soberano que tornem as economias africanas
+                            Desenhar, deter e operar plataformas de nível institucional que tornem as economias africanas
                             investíveis, transparentes e interoperáveis — começando por Angola.
                         </p>
                     </div>

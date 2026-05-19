@@ -3,13 +3,13 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function ContactThankYouPt() {
     return (
-        <MainLayout title="Mensagem Recebida – Biu-g Holdings LLC">
+        <MainLayout title="Mensagem Recebida – Biu-g Holdings">
             <div className="mx-auto max-w-2xl space-y-8 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Contacto</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Mensagem Recebida</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Obrigado. A sua mensagem foi recebida pela Biu-g Holdings LLC. A equipa irá analisar o pedido e
+                        Obrigado. A sua mensagem foi recebida pela Biu-g Holdings. A equipa irá analisar o pedido e
                         responder através do canal institucional adequado, caso seja necessário.
                     </p>
                 </header>

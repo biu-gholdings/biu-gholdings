@@ -4,7 +4,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { pathToComponent, url } from '@/lib/routes';
 
 const isStaticSite = import.meta.env.VITE_STATIC_SITE === 'true';
-const appName = import.meta.env.VITE_APP_NAME || 'Biu-g Holdings LLC';
+const appName = import.meta.env.VITE_APP_NAME || 'Biu-g Holdings';
 
 function parseInertiaComponent(raw) {
     if (typeof raw === 'string' && raw.includes('/')) {

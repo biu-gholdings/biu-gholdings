@@ -3,9 +3,9 @@ import MainLayout from '@/Layouts/MainLayout';
 const executives = [
     {
         name: 'Fábio Guilherme Massanga',
-        role: 'Founder, Executive Chairman & Chief Sovereign Architect',
+        role: 'Managing Member, Founder, President & CEO of CubeShackles, Inc.',
         location: 'Cabinda, Angola / United States',
-        bio: 'Founder of Biu-g Holdings LLC and architect of the CubeShackles ecosystem. Leads the group’s long-duration strategy across Angola, Portugal and the United States, with a focus on sovereign-grade financial infrastructure, national platforms and institutional partnerships.',
+        bio: 'Founder of Biu-g Holdings and President & CEO of CubeShackles, Inc. Leads the group’s long-term strategy across Angola, Portugal and the United States, with a focus on institutional-grade financial infrastructure, digital systems, national platforms and regulated market alignment.',
     },
     {
         name: 'José Quembi',
@@ -17,16 +17,15 @@ const executives = [
 
 export default function Leadership() {
     return (
-        <MainLayout title="Leadership – Biu-g Holdings LLC">
+        <MainLayout title="Leadership – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Leadership</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Leadership &amp; Governance</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC is led by operators who combine on-the-ground execution in Angola with a
-                        global view of capital markets, technology and regulatory alignment. The group’s leadership is
-                        structured to balance sovereign priorities, institutional discipline and long-term shareholder
-                        value.
+                        Biu-g Holdings is led by operators who combine on-the-ground execution in Angola with a global
+                        view of capital markets, technology and regulatory alignment. The group’s leadership is structured
+                        to balance national priorities, institutional discipline and long-term shareholder value.
                     </p>
                 </header>
 

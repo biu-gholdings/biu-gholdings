@@ -26,7 +26,7 @@ export default function MainLayout({ title, children }) {
           ];
 
     return (
-        <div className="min-h-screen bg-zinc-50 text-zinc-900">
+        <div className="flex min-h-screen flex-col bg-zinc-50 text-zinc-900">
             <PageHead title={title} />
             <header className="border-b border-zinc-200 bg-white">
                 <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4">
@@ -38,7 +38,7 @@ export default function MainLayout({ title, children }) {
                             BG
                         </div>
                         <div className="flex min-w-0 flex-col leading-tight">
-                            <span className="truncate text-sm font-semibold">Biu-g Holdings LLC</span>
+                            <span className="truncate text-sm font-semibold">Biu-g Holdings</span>
                             <span className="truncate text-xs text-zinc-500">
                                 {isPt
                                     ? 'Infraestrutura corporativa para África'
@@ -71,11 +71,13 @@ export default function MainLayout({ title, children }) {
                     </nav>
                 </div>
             </header>
-            <main className="pb-16">{children}</main>
-            <footer className="border-t border-zinc-200 bg-white">
-                <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2 px-4 py-4 text-xs text-zinc-500">
-                    <span>© {new Date().getFullYear()} Biu-g Holdings LLC</span>
-                    <span>{isPt ? 'Todos os direitos reservados.' : 'All rights reserved.'}</span>
+            <main className="flex-1">{children}</main>
+            <footer className="mt-auto border-t border-zinc-200 bg-white">
+                <div className="mx-auto max-w-6xl px-4 py-4 text-xs text-zinc-500">
+                    <span>
+                        © {new Date().getFullYear()} Biu-g Holdings LLC.{' '}
+                        {isPt ? 'Todos os direitos reservados.' : 'All rights reserved.'}
+                    </span>
                 </div>
             </footer>
         </div>

@@ -3,9 +3,9 @@ import MainLayout from '@/Layouts/MainLayout';
 const executives = [
     {
         name: 'Fábio Guilherme Massanga',
-        role: 'Fundador, Executive Chairman & Chief Sovereign Architect',
+        role: 'Sócio-Gerente, Fundador, Presidente & CEO da CubeShackles, Inc.',
         location: 'Cabinda, Angola / Estados Unidos',
-        bio: 'Fundador da Biu-g Holdings LLC e arquiteto do ecossistema CubeShackles. Lidera a estratégia de longo prazo do grupo entre Angola, Portugal e Estados Unidos, com foco em infraestrutura financeira de nível soberano, plataformas nacionais e parcerias institucionais.',
+        bio: 'Fundador da Biu-g Holdings e Presidente & CEO da CubeShackles, Inc. Lidera a estratégia de longo prazo do grupo entre Angola, Portugal e Estados Unidos, com foco em infraestrutura financeira de nível institucional, sistemas digitais, plataformas nacionais e alinhamento regulatório.',
     },
     {
         name: 'José Quembi',
@@ -17,15 +17,15 @@ const executives = [
 
 export default function LeadershipPt() {
     return (
-        <MainLayout title="Liderança – Biu-g Holdings LLC">
+        <MainLayout title="Liderança – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Liderança</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Liderança &amp; Governação</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        A Biu-g Holdings LLC é liderada por operadores que combinam execução no terreno em Angola com uma
-                        visão global de mercados de capitais, tecnologia e alinhamento regulatório. A liderança do grupo é
-                        estruturada para equilibrar prioridades soberanas, disciplina institucional e criação de valor
+                        A Biu-g Holdings é liderada por operadores que combinam execução no terreno em Angola com uma
+                        visão global de mercados de capitais, tecnologia e alinhamento regulatório. A liderança do grupo
+                        é estruturada para equilibrar prioridades nacionais, disciplina institucional e criação de valor
                         sustentável para os acionistas.
                     </p>
                 </header>

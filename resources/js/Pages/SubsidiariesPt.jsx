@@ -137,13 +137,13 @@ const clusters = [
 
 export default function SubsidiariesPt() {
     return (
-        <MainLayout title="Subsidiárias & Portefólio – Biu-g Holdings LLC">
+        <MainLayout title="Subsidiárias & Portefólio – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Portefólio</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Subsidiárias &amp; Empresas do Portefólio</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        A Biu-g Holdings LLC opera um portefólio multi-entidade em tecnologia, finanças, dados, mobilidade,
+                        A Biu-g Holdings opera um portefólio multi-entidade em tecnologia, finanças, dados, mobilidade,
                         e-commerce, media e educação. As entidades listadas são controladas pelo grupo ou veículos internos
                         planeados.
                     </p>

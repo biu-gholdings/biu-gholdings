@@ -2,15 +2,15 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function CorporateStructure() {
     return (
-        <MainLayout title="Corporate Structure – Biu-g Holdings LLC">
+        <MainLayout title="Corporate Structure – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                        Biu-g Holdings LLC
+                        Biu-g Holdings
                     </p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Corporate Structure</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC operates through a multi-layer structure spanning the United States, Portugal,
+                        Biu-g Holdings operates through a multi-layer structure spanning the United States, Portugal,
                         and Angola. This page describes group-controlled entities and planned vehicles for public
                         transparency only.
                     </p>
@@ -261,7 +261,7 @@ export default function CorporateStructure() {
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">Roll-Up View — How the Group Actually Looks</h2>
                     <p className="text-sm text-zinc-600">
-                        At a high level, Biu-g Holdings LLC exercises control and strategic direction through three major
+                        At a high level, Biu-g Holdings exercises control and strategic direction through three major
                         pillars:
                     </p>
                     <div className="grid gap-4 md:grid-cols-3">

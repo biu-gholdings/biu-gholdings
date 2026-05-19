@@ -137,13 +137,13 @@ const clusters = [
 
 export default function Subsidiaries() {
     return (
-        <MainLayout title="Subsidiaries & Portfolio – Biu-g Holdings LLC">
+        <MainLayout title="Subsidiaries & Portfolio – Biu-g Holdings">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Portfolio</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Subsidiaries &amp; Portfolio Companies</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC operates a multi-entity portfolio across technology, finance, data, mobility,
+                        Biu-g Holdings operates a multi-entity portfolio across technology, finance, data, mobility,
                         e-commerce, media and education. Listed entities are group-controlled or planned internal vehicles.
                     </p>
                     <p className="rounded-lg border border-amber-200 bg-amber-50/50 p-4 text-xs leading-relaxed text-zinc-600">

@@ -28,7 +28,7 @@ const COPY = {
         areaOfInterest: 'Area of interest',
         areaPlaceholder: 'Select area',
         areas: [
-            ['holdings', 'Biu-g Holdings LLC (parent)'],
+            ['holdings', 'Biu-g Holdings (parent)'],
             ['cubeshackles', 'CubeShackles ecosystem'],
             ['financial', 'Financial infrastructure'],
             ['governance', 'Governance & participation vehicles'],
@@ -67,7 +67,7 @@ const COPY = {
         areaOfInterest: 'Área de interesse',
         areaPlaceholder: 'Selecionar área',
         areas: [
-            ['holdings', 'Biu-g Holdings LLC (mãe)'],
+            ['holdings', 'Biu-g Holdings (mãe)'],
             ['cubeshackles', 'Ecossistema CubeShackles'],
             ['financial', 'Infraestrutura financeira'],
             ['governance', 'Governance e veículos de participação'],

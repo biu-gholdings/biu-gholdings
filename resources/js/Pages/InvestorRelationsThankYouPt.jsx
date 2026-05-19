@@ -3,7 +3,7 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function InvestorRelationsThankYouPt() {
     return (
-        <MainLayout title="Pedido Recebido – Biu-g Holdings LLC">
+        <MainLayout title="Pedido Recebido – Biu-g Holdings">
             <div className="mx-auto max-w-2xl space-y-8 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
@@ -11,7 +11,7 @@ export default function InvestorRelationsThankYouPt() {
                     </p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Pedido de Investidor Recebido</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Obrigado. O seu pedido foi recebido pela Biu-g Holdings LLC. A equipa irá analisar a submissão e
+                        Obrigado. O seu pedido foi recebido pela Biu-g Holdings. A equipa irá analisar a submissão e
                         responder através do canal institucional adequado, caso exista alinhamento.
                     </p>
                 </header>

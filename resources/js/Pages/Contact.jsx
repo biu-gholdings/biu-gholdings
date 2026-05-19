@@ -3,11 +3,11 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function Contact() {
     return (
-        <MainLayout title="Contact – Biu-g Holdings LLC">
+        <MainLayout title="Contact – Biu-g Holdings">
             <div className="mx-auto max-w-3xl space-y-10 px-4 py-12">
                 <header className="space-y-3">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Contact</p>
-                    <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Contact Biu-g Holdings LLC</h1>
+                    <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Contact Biu-g Holdings</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
                         For regulatory coordination, institutional partnerships, and corporate inquiries across the
                         United States, Portugal, and Angola, contact the group office using the channel below.
@@ -22,7 +22,7 @@ export default function Contact() {
                 <section className="rounded-lg border border-zinc-200 bg-white p-4 text-sm text-zinc-700 md:p-5">
                     <p className="font-semibold text-zinc-900">Jurisdictions</p>
                     <p className="mt-2 text-zinc-700">
-                        United States (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM Capital,
+                        United States (Biu-g Holdings) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM Capital,
                         FGMS, BIU.G Academy, and future subsidiaries)
                     </p>
                 </section>

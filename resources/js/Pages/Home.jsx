@@ -2,17 +2,17 @@ import MainLayout from '@/Layouts/MainLayout';
 
 export default function Home() {
     return (
-        <MainLayout title="Biu-g Holdings LLC – Corporate Home">
+        <MainLayout title="Biu-g Holdings – Corporate Home">
             <div className="mx-auto max-w-5xl space-y-10 px-4 py-12">
                 <section className="space-y-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                        Biu-g Holdings LLC
+                        Biu-g Holdings
                     </p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">
                         Engineering Africa’s Modern Corporate Infrastructure
                     </h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC is a global holdings platform focused on building durable financial,
+                        Biu-g Holdings is a global holdings platform focused on building durable financial,
                         technological and institutional infrastructure for Angola and Africa.
                     </p>
                 </section>
