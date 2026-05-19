@@ -10,6 +10,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: gh-pages-production
@@ -51,7 +53,10 @@ jobs:
           for path in README.md composer.json package.json artisan docs docs/source deploy scripts app routes vendor; do
             test ! -e "dist-pages-publish/$path"
           done
-          ! find dist-pages-publish -name '*.pdf' | grep -q .
+          if find dist-pages-publish -name '*.pdf' -print -quit | grep -q .; then
+            echo "PDF files must not be published to gh-pages"
+            exit 1
+          fi
 
       - name: Publish to gh-pages
         uses: peaceiris/actions-gh-pages@v4
@@ -70,7 +75,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: gh-pages
+          path: site
+      - uses: actions/checkout@v4
+        with:
+          path: repo
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: node scripts/verify-pages-artifact.mjs .
+      - run: node repo/scripts/verify-pages-artifact.mjs site
