@@ -12,7 +12,16 @@ import { allPublicPaths } from '../resources/js/lib/routes.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const publishDir = process.argv[2] ?? join(__dirname, '..', 'dist-pages-publish');
 
-const allowedRootFiles = new Set(['index.html', '404.html', '.nojekyll', 'CNAME']);
+const allowedRootFiles = new Set([
+    'index.html',
+    '404.html',
+    '.nojekyll',
+    'CNAME',
+    'favicon.ico',
+    'favicon-16x16.png',
+    'favicon-32x32.png',
+    'apple-touch-icon.png',
+]);
 
 function routePathToFileDir(routePath) {
     return routePath === '/' ? '' : routePath.replace(/^\//, '');
@@ -52,7 +61,7 @@ const forbiddenRootNames = new Set([
     '_config.yml',
 ]);
 const forbiddenExtensions = ['.pdf', '.md', '.php', '.env', '.blade.php', '.lock'];
-const allowedAssetExtensions = ['.js', '.css', '.map', '.woff', '.woff2'];
+const allowedAssetExtensions = ['.js', '.css', '.map', '.woff', '.woff2', '.png', '.webp', '.svg'];
 
 function walk(dir, files = []) {
     for (const entry of readdirSync(dir)) {

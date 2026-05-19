@@ -30,6 +30,15 @@ if (!existsSync(sourceIndex)) {
 
 cpSync(join(viteOut, 'assets'), join(publishDir, 'assets'), { recursive: true });
 
+for (const name of [
+    'favicon.ico',
+    'favicon-16x16.png',
+    'favicon-32x32.png',
+    'apple-touch-icon.png',
+]) {
+    cpSync(join(root, 'public', name), join(publishDir, name));
+}
+
 let shellHtml = readFileSync(sourceIndex, 'utf8');
 shellHtml = shellHtml.replace(/\.\.\/\.\.\/assets\//g, '/assets/');
 shellHtml = shellHtml.replace(/\/resources\/pages\//g, '/');

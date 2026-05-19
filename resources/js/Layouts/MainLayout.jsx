@@ -1,5 +1,6 @@
-import { PageHead, SiteLink, useSite } from '@/lib/site';
+import BrandLogo from '@/Components/BrandLogo';
 import LanguageToggle from '@/Components/LanguageToggle';
+import { PageHead, SiteLink, useSite } from '@/lib/site';
 
 export default function MainLayout({ title, children }) {
     const { pageComponent } = useSite();
@@ -34,9 +35,7 @@ export default function MainLayout({ title, children }) {
                         routeName={isPt ? 'home.pt' : 'home'}
                         className="flex min-w-0 items-center gap-3"
                     >
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-900 text-[10px] font-bold tracking-tight">
-                            BG
-                        </div>
+                        <BrandLogo className="h-10 w-10 shrink-0 object-contain" />
                         <div className="flex min-w-0 flex-col leading-tight">
                             <span className="truncate text-sm font-semibold">Biu-g Holdings</span>
                             <span className="truncate text-xs text-zinc-500">
