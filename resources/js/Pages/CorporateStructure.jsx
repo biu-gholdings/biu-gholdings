@@ -10,15 +10,22 @@ export default function CorporateStructure() {
                     </p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Corporate Structure</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC operates through a sovereign-grade, multi-layer structure spanning the United
-                        States, Portugal, and Angola. This architecture provides regulatory clarity, cross-border capital
-                        efficiency, IP protection, and long-term alignment with national institutions and African
-                        markets.
+                        Biu-g Holdings LLC operates through a multi-layer structure spanning the United States, Portugal,
+                        and Angola. This page describes group-controlled entities and planned vehicles for public
+                        transparency only.
                     </p>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        The Group is organized into eight strategic clusters, each with a distinct mandate across
-                        technology, finance, infrastructure, data, education, and fiduciary vehicles.
+                        The group is organized into strategic clusters across technology, finance, infrastructure, data,
+                        education, and fiduciary vehicles.
                     </p>
+                    <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4 text-xs leading-relaxed text-zinc-600 md:p-5">
+                        <p>
+                            References to planned entities, platforms, and operating structures are provided for
+                            transparency and may evolve as legal, regulatory, and commercial conditions change. This page
+                            does not imply endorsement, ownership, investment, partnership, or approval by any third party
+                            or public institution.
+                        </p>
+                    </div>
                 </header>
 
                 <section className="space-y-4">
@@ -71,71 +78,56 @@ export default function CorporateStructure() {
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <h3 className="text-lg font-semibold text-zinc-900">CubeShackles, Inc. (Delaware C-Corp, USA)</h3>
                         <p className="text-sm text-zinc-600">
-                            Global technology and IP company. Owns the SmartShackles engine, DAG protocol, developer
-                            ecosystem, and global licensing.
-                        </p>
-                        <p className="text-sm text-zinc-600">
-                            Ownership is distributed among founders, institutional partners, and long-term capital
-                            aligned with the group’s technology mandate. Specific interests in Angola operating
-                            companies are held through the appropriate participation vehicles.
+                            Global technology and intellectual property company for the CubeShackles ecosystem.
+                            Responsible for protocol research, software architecture, brand stewardship, and future
+                            licensing frameworks.
                         </p>
                     </div>
 
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <h3 className="text-lg font-semibold text-zinc-900">CubeShackles, S.A. (Angola)</h3>
-                        <p className="text-sm text-zinc-600">National operating company for the CubeShackles ecosystem.</p>
                         <p className="text-sm text-zinc-600">
-                            Shareholding includes the global technology parent, national strategic partners, institutional
-                            investors, and employee participation mechanisms designed for long-term alignment. Public
-                            disclosure is limited to structural roles; detailed registers are maintained through
-                            appropriate private and regulatory channels.
+                            Angola-focused operating company intended to localize CubeShackles infrastructure for national
+                            use cases, regulatory alignment, and future institutional partnerships, subject to applicable
+                            approvals.
                         </p>
                     </div>
 
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">
-                                National Data Platform (Platform inside CubeShackles, S.A.)
-                            </h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">National Data Platform, Lda. (Angola) — Planned</h3>
                             <p className="text-sm text-zinc-600">
-                                Sovereign-grade economic and social data platform — inflation, unemployment, informal
-                                markets, and pricing indices — operated within CubeShackles, S.A.
+                                Planned entity for economic and social data — inflation, unemployment, informal markets,
+                                and pricing indices — within the CubeShackles group structure.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">
-                                Kulifikila Credit Bureau (Platform inside CubeShackles, S.A.)
-                            </h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">Kulifikila Credit Bureau, Lda. (Angola) — Planned</h3>
                             <p className="text-sm text-zinc-600">
-                                Credit infrastructure for formal and informal sectors, operating multi-layer AOA credit
-                                scoring rails within CubeShackles, S.A.
+                                Planned credit infrastructure for formal and informal sectors, with multi-layer AOA credit
+                                scoring rails.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">
-                                Angola National Transit Platform (Platform inside CubeShackles, S.A.)
-                            </h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">Angola National Transit Platform — Planned</h3>
                             <p className="text-sm text-zinc-600">
-                                National transit application for drivers and riders, integrated with e-Kwanza, stable AOA,
-                                and National Token tax rails, operated within CubeShackles, S.A.
+                                Planned national transit application for drivers and riders, integrated with group payment
+                                and tax rails under development.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">
-                                PraçaNgola (Platform inside CubeShackles, S.A.)
-                            </h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">PraçaNgola, Lda. (Angola) — Planned</h3>
                             <p className="text-sm text-zinc-600">
-                                National e-commerce infrastructure operated within CubeShackles, S.A., with payments on
-                                CubeShackles rails (e-Kwanza, stable AOA, National Token).
+                                Planned national e-commerce infrastructure within the CubeShackles group structure.
                             </p>
                         </div>
                     </div>
 
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">BualaBuitu Platform</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">BualaBuitu Terminal — Platform / Product</h3>
                         <p className="text-sm text-zinc-600">
-                            Angola’s Bloomberg-equivalent financial terminal. Currently structured as a product within
-                            CubeShackles, S.A., with optional future spin-out as a dedicated legal entity.
+                            Financial market intelligence terminal developed as a platform product within the CubeShackles
+                            group, with optional future legal entity formation.
                         </p>
                     </div>
                 </section>
@@ -159,8 +151,7 @@ export default function CorporateStructure() {
                                 and national-scale transactions.
                             </p>
                             <p className="text-sm text-zinc-600">
-                                Equity is held through participation vehicles in Portugal and Angola, alongside
-                                employees, local partners, and institutional co-investors.
+                                Equity is held through Biu-g participation vehicles in Portugal and Angola.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
@@ -219,10 +210,10 @@ export default function CorporateStructure() {
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">6. Trusts &amp; Fiduciary Vehicles</h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">Fundo Fiduciário Estratégico (Angola)</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">Fundo Fiduciário Estratégico (Angola) — Planned</h3>
                         <p className="text-sm text-zinc-600">
-                            Sovereign-grade fiduciary fund established to protect all Angolan subsidiaries, shield
-                            executives and workers, and hold AOA-denominated interests on behalf of Biu-g Holdings.
+                            Planned internal fiduciary structure to support continuity, stakeholder alignment, and
+                            AOA-denominated interests on behalf of Biu-g Holdings within the group.
                         </p>
                         <p className="text-sm text-zinc-600">
                             Representation is exercised through{' '}
@@ -270,8 +261,7 @@ export default function CorporateStructure() {
                         <li>CubeDex / CubeBourse (DEX and exchange layer)</li>
                         <li>CubeCloud / CubeQuantum (Africa-first compute and infrastructure stack)</li>
                         <li>
-                            Angola National Wallet (regulated national wallet system under CubeShackles, S.A. and national
-                            banking partners)
+                            Angola National Wallet (planned national wallet system within the CubeShackles group structure)
                         </li>
                         <li>BualaBuitu Terminal Angola (financial terminal product within CubeShackles, S.A.)</li>
                     </ul>
@@ -303,7 +293,7 @@ export default function CorporateStructure() {
                                 <li>Mucho Dinero Tecnologia &amp; Mucho Dinero Produção, Lda. (Angola)</li>
                                 <li>
                                     National Data Platform, Kulifikila, PraçaNgola, Angola National Transit Platform
-                                    (platforms inside CubeShackles, S.A.); 1975 Nzila, FGMS &amp; Co, FGM &amp; Co
+                                    (planned); 1975 Nzila, FGMS &amp; Co, FGM &amp; Co (planned)
                                 </li>
                             </ul>
                         </div>

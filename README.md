@@ -1,6 +1,6 @@
 # Biu-g Holdings LLC
 
-Biu-g Holdings LLC is a global parent and holding company focused on sovereign-grade financial infrastructure, digital systems, data, education, and institutional platforms for **Angola** and **Africa**.
+Biu-g Holdings LLC is a global parent and holding company focused on financial and digital infrastructure, data, education, and institutional platforms for **Angola** and **Africa**.
 
 ## Jurisdictions
 
@@ -34,7 +34,7 @@ See [SECURITY.md](SECURITY.md) for responsible vulnerability disclosure.
 
 ## Disclaimer
 
-This repository and website are for **general corporate information** only. Nothing here constitutes an offer to sell or a solicitation to buy any security or investment product.
+This repository and website are for **general corporate information** only. Nothing here constitutes an offer to sell or a solicitation to buy any security or investment product. Public structure descriptions do not imply third-party endorsement, ownership, partnership, or approval.
 
 ## License
 

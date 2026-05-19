@@ -102,7 +102,7 @@ export default function AboutPt() {
                     </p>
                     <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
                         <li>Residência legal e fiscal clara para cada empresa operacional.</li>
-                        <li>Veículos de participação claros para parceiros institucionais locais e globais.</li>
+                        <li>Veículos de participação claros na estrutura do grupo Biu-g.</li>
                         <li>
                             Caminhos de conformidade com bancos centrais, reguladores de mercados de capitais e
                             autoridades tributárias.

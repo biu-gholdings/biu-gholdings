@@ -17,7 +17,7 @@ export default function ContactPt() {
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Contacto Corporativo &amp; Institucional</h2>
                     <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
                         <p className="text-sm leading-relaxed text-zinc-600">
-                            Reguladores, bancos, parceiros institucionais, media e stakeholders corporativos podem
+                            Reguladores, partes institucionais qualificadas, media e stakeholders corporativos podem
                             contactar a Biu-g Holdings LLC por email. Inclua a sua organização, jurisdição e assunto do
                             pedido.
                         </p>

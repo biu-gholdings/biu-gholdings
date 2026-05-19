@@ -10,7 +10,7 @@
 |--------|------|
 | **United States** | Global parent, intellectual property, and group coordination |
 | **Portugal** | European holding and participation structures |
-| **Angola** | National operating alignment and institutional partnerships |
+| **Angola** | National operating alignment and group-controlled entities |
 
 ## Portfolio themes
 
@@ -24,7 +24,7 @@ The group’s work is organized around durable themes:
 
 ## What this document is not
 
-This overview does not describe private ownership percentages, fundraising terms, or investment offerings. Such matters, when applicable, are addressed through appropriate institutional channels.
+This overview does not describe private ownership percentages, third-party shareholders, fundraising terms, or investment offerings. Public structure references do not imply endorsement, partnership, or approval by any third party or public institution.
 
 ## Contact
 

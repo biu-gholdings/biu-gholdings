@@ -13,22 +13,22 @@ export default function HomePt() {
                     </h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
                         A Biu-g Holdings LLC é uma plataforma global de holdings focada em construir infraestrutura
-                        financeira, tecnológica e institucional de nível soberano para Angola e África.
+                        financeira, tecnológica e institucional duradoura para Angola e África.
                     </p>
                 </section>
 
                 <section className="grid gap-6 md:grid-cols-3">
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4">
-                        <h2 className="text-sm font-semibold text-zinc-900">Infraestrutura de Nível Soberano</h2>
+                        <h2 className="text-sm font-semibold text-zinc-900">Infraestrutura Nacional</h2>
                         <p className="text-xs text-zinc-600">
-                            CubeShackles, Carteira Nacional e rails financeiros nativos em AOA, desenhados para
-                            reguladores, instituições e cidadãos.
+                            CubeShackles, sistemas nacionais de carteira planeados e rails financeiros nativos em AOA em
+                            desenvolvimento no grupo.
                         </p>
                     </div>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4">
-                        <h2 className="text-sm font-semibold text-zinc-900">Alinhamento Institucional</h2>
+                        <h2 className="text-sm font-semibold text-zinc-900">Disciplina Regulatória</h2>
                         <p className="text-xs text-zinc-600">
-                            Construído em parceria com bancos, operadoras de telecomunicações, reguladores e capital de
+                            Estruturado para clareza jurisdicional, alinhamento regulatório e disciplina institucional de
                             longo prazo.
                         </p>
                     </div>

@@ -104,7 +104,7 @@ export default function About() {
                     </p>
                     <ul className="list-inside list-disc space-y-1 text-sm text-zinc-600">
                         <li>Clear legal and tax residency for each operating company.</li>
-                        <li>Clear participation vehicles for local and global institutional partners.</li>
+                        <li>Clear participation vehicles within the Biu-g group structure.</li>
                         <li>
                             Compliance pathways with central banks, capital markets regulators and tax agencies.
                         </li>

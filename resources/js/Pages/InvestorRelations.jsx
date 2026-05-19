@@ -39,9 +39,8 @@ export default function InvestorRelations() {
                     </h2>
                     <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
                         <p className="text-sm leading-relaxed text-zinc-600">
-                            Institutional investors, banks, strategic partners, regulators, and sovereign entities may
-                            contact Biu-g Holdings LLC through the address below. Please include your institution,
-                            jurisdiction, and area of interest.
+                            Qualified institutional parties, regulators, and counterparties may contact Biu-g Holdings LLC
+                            through the address below. Please include your organization, jurisdiction, and area of interest.
                         </p>
                         <div>
                             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Email</p>

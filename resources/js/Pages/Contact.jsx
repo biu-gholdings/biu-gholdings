@@ -17,7 +17,7 @@ export default function Contact() {
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Corporate &amp; Institutional Contact</h2>
                     <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
                         <p className="text-sm leading-relaxed text-zinc-600">
-                            Regulators, banks, institutional partners, media, and corporate stakeholders may contact
+                            Regulators, qualified institutional parties, media, and corporate stakeholders may contact
                             Biu-g Holdings LLC by email. Please include your organization, jurisdiction, and subject of
                             inquiry.
                         </p>

@@ -40,9 +40,8 @@ export default function InvestorRelationsPt() {
                     </h2>
                     <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
                         <p className="text-sm leading-relaxed text-zinc-600">
-                            Investidores institucionais, bancos, parceiros estratégicos, reguladores e entidades
-                            soberanas podem contactar a Biu-g Holdings LLC através do endereço abaixo. Inclua a sua
-                            instituição, jurisdição e área de interesse.
+                            Partes institucionais qualificadas, reguladores e contrapartes podem contactar a Biu-g Holdings
+                            LLC através do endereço abaixo. Inclua a sua organização, jurisdição e área de interesse.
                         </p>
                         <div>
                             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Email</p>

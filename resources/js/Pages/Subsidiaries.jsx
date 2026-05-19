@@ -9,49 +9,49 @@ const clusters = [
                 type: 'Technology / IP Company',
                 status: 'Active',
                 description:
-                    'Global technology and IP company for the CubeShackles ecosystem. Owns the SmartShackles engine, DAG protocol, developer stack and licensing model, and holds equity in CubeShackles, S.A. (Angola).',
+                    'Global technology and intellectual property company for the CubeShackles ecosystem. Responsible for protocol research, software architecture, brand stewardship, and future licensing frameworks.',
             },
             {
                 name: 'CubeShackles, S.A. (Angola)',
                 type: 'Operating Company',
-                status: 'Active',
+                status: 'Planned / In Formation',
                 description:
-                    'National operating company for the CubeShackles rails in Angola. Interfaces with regulators, banks, telecom operators and institutions to run AOA-native financial infrastructure.',
+                    'Angola-focused operating company intended to localize CubeShackles infrastructure for national use cases, regulatory alignment, and future institutional partnerships, subject to applicable approvals.',
             },
             {
-                name: 'National Data Platform (Platform inside CubeShackles, S.A.)',
+                name: 'National Data Platform, Lda. (Angola)',
                 type: 'Data Platform',
-                status: 'In Development',
+                status: 'Planned',
                 description:
-                    'Sovereign-grade economic and social data platform — inflation, unemployment, informal markets, local price indices and access metrics — operated within CubeShackles, S.A.',
+                    'Planned entity for economic and social data — inflation, unemployment, informal markets, local price indices and access metrics.',
             },
             {
-                name: 'Kulifikila Credit Bureau (Platform inside CubeShackles, S.A.)',
+                name: 'Kulifikila Credit Bureau, Lda. (Angola)',
                 type: 'Credit Infrastructure',
-                status: 'In Development',
+                status: 'Planned',
                 description:
-                    'Credit infrastructure for formal and informal sectors, with multi-layer AOA credit scoring and risk intelligence for banks, fintechs and government.',
+                    'Planned credit infrastructure for formal and informal sectors, with multi-layer AOA credit scoring and risk intelligence.',
             },
             {
-                name: 'Angola National Transit Platform (Platform inside CubeShackles, S.A.)',
+                name: 'Angola National Transit Platform',
                 type: 'Mobility / Transit',
-                status: 'In Development',
+                status: 'Planned',
                 description:
-                    'National transit application for drivers and riders, integrated with e-Kwanza, stable AOA and National Token for transport payments and tax rails.',
+                    'Planned national transit application for drivers and riders, with group payment and tax rails under development.',
             },
             {
-                name: 'PraçaNgola (Platform inside CubeShackles, S.A.)',
+                name: 'PraçaNgola, Lda. (Angola)',
                 type: 'E-commerce Infrastructure',
-                status: 'In Development',
+                status: 'Planned',
                 description:
-                    'National e-commerce and logistics platform operated within CubeShackles, S.A., powered by CubeShackles payments and tax rails.',
+                    'Planned national e-commerce and logistics infrastructure within the CubeShackles group structure.',
             },
             {
-                name: 'BualaBuitu Terminal (Platform inside CubeShackles, S.A.)',
-                type: 'Market Intelligence Platform',
-                status: 'Product (Spin-out Optional)',
+                name: 'BualaBuitu Terminal',
+                type: 'Platform / Product',
+                status: 'In Development',
                 description:
-                    'Angola’s Bloomberg-style financial terminal for real-time data, analytics and market infrastructure. Today structured as a product under CubeShackles, S.A., with optional future spin-out.',
+                    'Financial market intelligence terminal developed as a platform product within the CubeShackles group.',
             },
         ],
     },
@@ -63,42 +63,42 @@ const clusters = [
                 type: 'Trading & Capital',
                 status: 'Active',
                 description:
-                    'Original trading and capital entity of the group. Supports proprietary trading, capital markets exposure and early-stage structuring activities.',
+                    'Trading and capital entity of the group within the Biu-g holdings structure.',
             },
             {
                 name: 'Grupo FGMS & Associados, Lda. (Angola)',
                 type: 'Integrated Financial Platform',
                 status: 'Active',
                 description:
-                    'Integrated financial platform for Angola, supporting multi-strategy institutional mandates and national-scale transactions.',
+                    'Integrated financial platform for Angola within the Biu-g group structure.',
             },
             {
                 name: 'Biu-g Investment Management, Lda. (Angola)',
                 type: 'Asset Management',
-                status: 'Planned / In Formation',
+                status: 'Planned',
                 description:
-                    'AOA-denominated asset management vehicle focused on Angolan assets and institutional risk management, operating under applicable local regulation.',
+                    'Planned AOA-denominated asset management vehicle, subject to applicable local regulation.',
             },
             {
                 name: '1975 Nzila, Lda. (Angola)',
                 type: 'VC / PE & Experiences',
                 status: 'Planned',
                 description:
-                    'Local VC/PE and hospitality / experience arm, focused on strategic equity, real economy projects and branded experiences linked to the Biu-g Holdings ecosystem.',
+                    'Planned local investment and brand experience vehicle within the Biu-g Holdings ecosystem.',
             },
             {
                 name: 'FGMS & Co.',
                 type: 'Real Estate Operations',
                 status: 'Planned',
                 description:
-                    'Real estate operating arm for Angola and Portugal, aligned with FGMS & Associados and the broader holdings structure.',
+                    'Planned real estate operating arm for Angola and Portugal within the group structure.',
             },
             {
                 name: 'FGM & Co.',
-                type: 'Advisory & Co-Investment SPV',
+                type: 'Advisory & Structuring SPV',
                 status: 'Planned',
                 description:
-                    'Financial structuring and co-investment vehicle used for bespoke transactions and strategic syndications alongside institutional partners.',
+                    'Planned financial structuring and co-investment vehicle for group transactions.',
             },
         ],
     },
@@ -110,26 +110,40 @@ const clusters = [
                 type: 'Technology & Innovation',
                 status: 'Active',
                 description:
-                    'Technology subsidiary focused on innovation and national talent development. Supports CubeShackles, Angola National Wallet, PraçaNgola and transit platforms.',
+                    'Technology subsidiary focused on innovation and national talent development within the group.',
             },
             {
                 name: 'Mucho Dinero Produção, Lda. (Angola)',
                 type: 'Media & Production',
                 status: 'Active',
                 description:
-                    'Media and production company responsible for campaigns, content and national communication for CubeShackles, Angola National Wallet, PraçaNgola and related brands.',
+                    'Media and production company for group brands and national communication initiatives.',
             },
         ],
     },
     {
-        title: 'Education & Non-Profit',
+        title: 'Fiduciary & Education',
         items: [
+            {
+                name: 'Fundo Fiduciário Estratégico (Angola)',
+                type: 'Fiduciary Vehicle',
+                status: 'Planned',
+                description:
+                    'Planned internal fiduciary structure supporting continuity and alignment within the Biu-g group.',
+            },
+            {
+                name: 'Sango Trust',
+                type: 'Trust Vehicle',
+                status: 'Planned',
+                description:
+                    'Planned long-term wealth and succession vehicle within the multi-jurisdictional structure.',
+            },
             {
                 name: 'BIU.G Academy (Non-profit)',
                 type: 'Education / Capacity Building',
                 status: 'In Formation',
                 description:
-                    'Educational backbone of the ecosystem. Delivers financial literacy, technical training and onboarding for CubeShackles, Anglocoin, Angola National Wallet and related systems.',
+                    'Educational backbone of the ecosystem for financial literacy and technical training.',
             },
         ],
     },
@@ -143,9 +157,13 @@ export default function Subsidiaries() {
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Portfolio</p>
                     <h1 className="text-3xl font-semibold text-zinc-900 md:text-4xl">Subsidiaries &amp; Portfolio Companies</h1>
                     <p className="text-sm leading-relaxed text-zinc-600 md:text-base">
-                        Biu-g Holdings LLC operates a multi-entity, multi-jurisdictional portfolio across technology,
-                        finance, data, mobility, e-commerce, media and education. Each subsidiary is structured to align
-                        with regulators, protect local stakeholders and compound long-term value for the group.
+                        Biu-g Holdings LLC operates a multi-entity portfolio across technology, finance, data, mobility,
+                        e-commerce, media and education. Listed entities are group-controlled or planned internal vehicles.
+                    </p>
+                    <p className="rounded-lg border border-amber-200 bg-amber-50/50 p-4 text-xs leading-relaxed text-zinc-600">
+                        References to planned entities may evolve as legal and regulatory conditions change. This page does
+                        not imply endorsement, ownership, investment, partnership, or approval by any third party or public
+                        institution.
                     </p>
                 </header>
 

@@ -17,10 +17,11 @@ Certain information is not disclosed publicly because it may involve:
 - Regulatory processes and confidential institutional dialogues  
 - Partner, employee, and personal data  
 - Detailed capital, legal, and transaction matters addressed through appropriate private channels  
+- Third-party ownership, cap tables, or unconfirmed strategic relationships  
 
 ## Why discipline matters
 
-Transparency without structure can create confusion or risk. We aim to present a clear institutional narrative while respecting legal, regulatory, and security obligations in each jurisdiction.
+Transparency without structure can create confusion or risk. We aim to present a clear institutional narrative while respecting legal, regulatory, and security obligations in each jurisdiction. Public descriptions of planned entities do not imply endorsement, partnership, or approval by any third party or public institution.
 
 ## Questions
 
