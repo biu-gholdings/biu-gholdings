@@ -15,6 +15,8 @@ const PAGE_LOCALE_ROUTE_MAP = {
     ContactPt: { en: 'contact', pt: 'contact.pt' },
     InvestorRelations: { en: 'investor.relations', pt: 'investor.relations.pt' },
     InvestorRelationsPt: { en: 'investor.relations', pt: 'investor.relations.pt' },
+    InvestorRelationsThankYou: { en: 'investor.relations.thankyou', pt: 'investor.relations.thankyou.pt' },
+    InvestorRelationsThankYouPt: { en: 'investor.relations.thankyou', pt: 'investor.relations.thankyou.pt' },
 };
 
 export default function LanguageToggle() {

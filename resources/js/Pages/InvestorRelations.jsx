@@ -1,3 +1,4 @@
+import InvestorInquiryForm from '@/Components/InvestorInquiryForm';
 import MainLayout from '@/Layouts/MainLayout';
 
 export default function InvestorRelations() {
@@ -34,28 +35,8 @@ export default function InvestorRelations() {
                 </section>
 
                 <section className="space-y-4">
-                    <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">
-                        Investor &amp; Institutional Contact
-                    </h2>
-                    <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
-                        <p className="text-sm leading-relaxed text-zinc-600">
-                            Qualified institutional parties, regulators, and counterparties may contact Biu-g Holdings LLC
-                            through the address below. Please include your organization, jurisdiction, and area of interest.
-                        </p>
-                        <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Email</p>
-                            <a
-                                href="mailto:support@biu-gholdings.org"
-                                className="mt-1 inline-block text-sm font-medium text-zinc-900 underline"
-                            >
-                                support@biu-gholdings.org
-                            </a>
-                        </div>
-                        <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">
-                            This website does not constitute an offer to sell, solicitation to buy, or recommendation
-                            regarding any securities, tokens, funds, or investment products.
-                        </p>
-                    </article>
+                    <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Submit an Investor Inquiry</h2>
+                    <InvestorInquiryForm locale="en" />
                 </section>
             </div>
         </MainLayout>

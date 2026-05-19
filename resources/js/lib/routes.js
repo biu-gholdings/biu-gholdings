@@ -15,6 +15,8 @@ export const routePaths = {
     'subsidiaries.pt': '/subsidiarias',
     'investor.relations': '/investor-relations',
     'investor.relations.pt': '/relacoes-com-investidores',
+    'investor.relations.thankyou': '/investor-relations/thank-you',
+    'investor.relations.thankyou.pt': '/relacoes-com-investidores/obrigado',
     contact: '/contact',
     'contact.pt': '/contacto',
 };
@@ -31,7 +33,9 @@ export const pathToComponent = {
     '/subsidiaries': 'Subsidiaries',
     '/subsidiarias': 'SubsidiariesPt',
     '/investor-relations': 'InvestorRelations',
+    '/investor-relations/thank-you': 'InvestorRelationsThankYou',
     '/relacoes-com-investidores': 'InvestorRelationsPt',
+    '/relacoes-com-investidores/obrigado': 'InvestorRelationsThankYouPt',
     '/contact': 'Contact',
     '/contacto': 'ContactPt',
 };
@@ -40,5 +44,5 @@ export function url(routeName) {
     return routePaths[routeName] ?? '/';
 }
 
-/** All public URLs included in the GitHub Pages static export (14 pages). */
+/** All public URLs included in the GitHub Pages static export (16 pages). */
 export const allPublicPaths = Object.values(routePaths);

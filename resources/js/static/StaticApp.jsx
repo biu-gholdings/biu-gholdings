@@ -9,6 +9,8 @@ import Home from '@/Pages/Home';
 import HomePt from '@/Pages/HomePt';
 import InvestorRelations from '@/Pages/InvestorRelations';
 import InvestorRelationsPt from '@/Pages/InvestorRelationsPt';
+import InvestorRelationsThankYou from '@/Pages/InvestorRelationsThankYou';
+import InvestorRelationsThankYouPt from '@/Pages/InvestorRelationsThankYouPt';
 import Leadership from '@/Pages/Leadership';
 import LeadershipPt from '@/Pages/LeadershipPt';
 import Subsidiaries from '@/Pages/Subsidiaries';
@@ -28,6 +30,8 @@ const staticRoutes = [
     { path: routePaths['subsidiaries.pt'], element: <SubsidiariesPt /> },
     { path: routePaths['investor.relations'], element: <InvestorRelations /> },
     { path: routePaths['investor.relations.pt'], element: <InvestorRelationsPt /> },
+    { path: routePaths['investor.relations.thankyou'], element: <InvestorRelationsThankYou /> },
+    { path: routePaths['investor.relations.thankyou.pt'], element: <InvestorRelationsThankYouPt /> },
     { path: routePaths.contact, element: <Contact /> },
     { path: routePaths['contact.pt'], element: <ContactPt /> },
 ];

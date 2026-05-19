@@ -22,4 +22,6 @@ Route::get('/contact', fn () => Inertia::render('Contact'))->name('contact');
 Route::get('/contacto', fn () => Inertia::render('ContactPt'))->name('contact.pt');
 
 Route::get('/investor-relations', fn () => Inertia::render('InvestorRelations'))->name('investor.relations');
+Route::get('/investor-relations/thank-you', fn () => Inertia::render('InvestorRelationsThankYou'))->name('investor.relations.thankyou');
 Route::get('/relacoes-com-investidores', fn () => Inertia::render('InvestorRelationsPt'))->name('investor.relations.pt');
+Route::get('/relacoes-com-investidores/obrigado', fn () => Inertia::render('InvestorRelationsThankYouPt'))->name('investor.relations.thankyou.pt');

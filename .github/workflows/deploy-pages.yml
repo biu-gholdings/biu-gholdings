@@ -39,6 +39,7 @@ jobs:
         run: npm run build:pages
         env:
           NODE_ENV: production
+          VITE_IR_FORM_ENDPOINT: ${{ secrets.VITE_IR_FORM_ENDPOINT }}
 
       - name: Verify publish artifact
         run: node scripts/verify-pages-artifact.mjs dist-pages-publish

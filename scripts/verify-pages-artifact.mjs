@@ -13,9 +13,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const publishDir = process.argv[2] ?? join(__dirname, '..', 'dist-pages-publish');
 
 const allowedRootFiles = new Set(['index.html', '404.html', '.nojekyll', 'CNAME']);
+
+function routePathToFileDir(routePath) {
+    return routePath === '/' ? '' : routePath.replace(/^\//, '');
+}
+
 const allowedRouteDirs = new Set(
-    allPublicPaths.filter((p) => p !== '/').map((p) => p.replace(/^\//, '')),
+    allPublicPaths.filter((p) => p !== '/').map((p) => routePathToFileDir(p)),
 );
+
+const allowedTopLevelDirs = new Set(['assets']);
+for (const routePath of allPublicPaths) {
+    if (routePath === '/') {
+        continue;
+    }
+    allowedTopLevelDirs.add(routePath.replace(/^\//, '').split('/')[0]);
+}
 const forbiddenDirs = new Set([
     'docs',
     'source',
@@ -69,7 +82,7 @@ for (const entry of readdirSync(publishDir)) {
             continue;
         }
 
-        if (!allowedRouteDirs.has(entry)) {
+        if (!allowedTopLevelDirs.has(entry)) {
             errors.push(`Unexpected directory: ${entry}/`);
         }
         continue;
@@ -91,7 +104,7 @@ if (!existsSync(join(publishDir, 'assets'))) {
 for (const routeDir of allowedRouteDirs) {
     const indexPath = join(publishDir, routeDir, 'index.html');
     if (!existsSync(indexPath)) {
-        errors.push(`Missing EN/PT static page: /${routeDir}/index.html`);
+        errors.push(`Missing static page: /${routeDir}/index.html`);
     }
 }
 
@@ -132,7 +145,7 @@ for (const file of allFiles) {
         continue;
     }
 
-    if (parts.length === 2 && parts[0] !== 'assets' && parts[1] !== 'index.html') {
+    if (parts.length > 1 && parts[0] !== 'assets' && parts.at(-1) !== 'index.html') {
         errors.push(`Route folder may only contain index.html: ${rel}`);
     }
 }

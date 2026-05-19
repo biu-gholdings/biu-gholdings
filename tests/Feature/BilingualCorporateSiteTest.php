@@ -25,7 +25,9 @@ class BilingualCorporateSiteTest extends TestCase
             'subsidiaries en' => ['/subsidiaries', 'Subsidiaries'],
             'subsidiaries pt' => ['/subsidiarias', 'SubsidiariesPt'],
             'investor relations en' => ['/investor-relations', 'InvestorRelations'],
+            'investor relations thank you en' => ['/investor-relations/thank-you', 'InvestorRelationsThankYou'],
             'investor relations pt' => ['/relacoes-com-investidores', 'InvestorRelationsPt'],
+            'investor relations thank you pt' => ['/relacoes-com-investidores/obrigado', 'InvestorRelationsThankYouPt'],
             'contact en' => ['/contact', 'Contact'],
             'contact pt' => ['/contacto', 'ContactPt'],
         ];
@@ -53,7 +55,9 @@ class BilingualCorporateSiteTest extends TestCase
             'subsidiaries',
             'subsidiaries.pt',
             'investor.relations',
+            'investor.relations.thankyou',
             'investor.relations.pt',
+            'investor.relations.thankyou.pt',
             'contact',
             'contact.pt',
         ];
