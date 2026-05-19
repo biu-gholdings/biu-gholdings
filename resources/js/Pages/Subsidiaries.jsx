@@ -134,16 +134,16 @@ const clusters = [
             {
                 name: 'Sango Trust',
                 type: 'Trust Vehicle',
-                status: 'Planned',
+                status: 'Active',
                 description:
-                    'Planned long-term wealth and succession vehicle within the multi-jurisdictional structure.',
+                    'Private fiduciary and long-term asset stewardship structure supporting intergenerational governance, succession planning, and strategic capital preservation within the Biu-g Holdings ecosystem.',
             },
             {
-                name: 'BIU.G Academy (Non-profit)',
+                name: 'BIU.G Academy',
                 type: 'Education / Capacity Building',
-                status: 'In Formation',
+                status: 'Active',
                 description:
-                    'Educational backbone of the ecosystem for financial literacy and technical training.',
+                    'Active educational and capacity-building initiative focused on technology, financial literacy, digital infrastructure, and AI-native workforce development across Angola and Africa, with research, training, and community-led learning aligned with the Biu-g Holdings mission.',
             },
         ],
     },

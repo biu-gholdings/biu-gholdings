@@ -221,10 +221,11 @@ export default function CorporateStructure() {
                         </p>
                     </div>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">Sango Trust — Planned</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">Sango Trust</h3>
                         <p className="text-sm text-zinc-600">
-                            Long-term wealth, asset protection, and succession vehicle aligned with the multi-jurisdictional
-                            structure of Biu-g Holdings.
+                            Private fiduciary and long-term asset stewardship structure supporting intergenerational
+                            governance, succession planning, and strategic capital preservation within the Biu-g Holdings
+                            ecosystem.
                         </p>
                     </div>
                 </section>
@@ -234,14 +235,15 @@ export default function CorporateStructure() {
                         7. Education &amp; National Capacity Building
                     </h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy — Non-Profit</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy</h3>
                         <p className="text-sm text-zinc-600">
-                            Educational backbone of the ecosystem. Supports CubeShackles, the Angola National Wallet,
-                            Anglocoin, and financial literacy initiatives nationwide.
+                            BIU.G Academy is an active educational and capacity-building initiative focused on technology,
+                            financial literacy, digital infrastructure, and AI-native workforce development across Angola and
+                            Africa.
                         </p>
                         <p className="text-sm text-zinc-600">
-                            Strategically positioned under <span className="font-medium">CubeShackles Global</span>, while
-                            brand control and mission alignment remain with Biu-g Holdings LLC.
+                            The initiative supports long-term ecosystem development through research, training, technical
+                            education, and community-led learning programs aligned with the broader Biu-g Holdings mission.
                         </p>
                     </div>
                 </section>
@@ -298,11 +300,11 @@ export default function CorporateStructure() {
                             </ul>
                         </div>
                         <div className="rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="mb-2 text-sm font-semibold text-zinc-900">3. Trust &amp; Non-Profit</h3>
+                            <h3 className="mb-2 text-sm font-semibold text-zinc-900">3. Trust &amp; Education</h3>
                             <ul className="list-inside list-disc space-y-1 text-xs text-zinc-600">
                                 <li>Fundo Fiduciário Estratégico (Angola)</li>
-                                <li>Sango Trust (planned)</li>
-                                <li>BIU.G Academy (non-profit under CubeShackles Global)</li>
+                                <li>Sango Trust</li>
+                                <li>BIU.G Academy</li>
                             </ul>
                         </div>
                     </div>

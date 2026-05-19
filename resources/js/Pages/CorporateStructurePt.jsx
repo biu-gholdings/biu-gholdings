@@ -214,10 +214,11 @@ export default function CorporateStructurePt() {
                         </p>
                     </div>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">Sango Trust — Planeado</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">Sango Trust</h3>
                         <p className="text-sm text-zinc-600">
-                            Veículo de riqueza de longo prazo, proteção patrimonial e sucessória, alinhado com a estrutura
-                            multi-jurisdicional da Biu-g Holdings.
+                            Estrutura fiduciária privada de gestão patrimonial de longo prazo, que apoia governance
+                            intergeracional, planeamento sucessório e preservação estratégica de capital no ecossistema
+                            Biu-g Holdings.
                         </p>
                     </div>
                 </section>
@@ -225,14 +226,16 @@ export default function CorporateStructurePt() {
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">7. Educação &amp; Capacitação Nacional</h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy — Sem Fins Lucrativos</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy</h3>
                         <p className="text-sm text-zinc-600">
-                            Espinha dorsal educacional do ecossistema. Apoia CubeShackles, Carteira Nacional, Anglocoin e
-                            literacia financeira em todo o país.
+                            A BIU.G Academy é uma iniciativa ativa de educação e capacitação, focada em tecnologia,
+                            literacia financeira, infraestrutura digital e desenvolvimento de talento nativo em IA em Angola
+                            e África.
                         </p>
                         <p className="text-sm text-zinc-600">
-                            Posicionada estrategicamente sob <span className="font-medium">CubeShackles Global</span>, com
-                            controlo de marca e missão alinhados com a Biu-g Holdings LLC.
+                            A iniciativa apoia o desenvolvimento de longo prazo do ecossistema através de investigação,
+                            formação, educação técnica e programas de aprendizagem liderados pela comunidade, alinhados com a
+                            missão mais ampla da Biu-g Holdings.
                         </p>
                     </div>
                 </section>
@@ -288,11 +291,11 @@ export default function CorporateStructurePt() {
                             </ul>
                         </div>
                         <div className="rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="mb-2 text-sm font-semibold text-zinc-900">3. Trust &amp; Sem Fins Lucrativos</h3>
+                            <h3 className="mb-2 text-sm font-semibold text-zinc-900">3. Trust &amp; Educação</h3>
                             <ul className="list-inside list-disc space-y-1 text-xs text-zinc-600">
                                 <li>Fundo Fiduciário Estratégico (Angola)</li>
-                                <li>Sango Trust (planeado)</li>
-                                <li>BIU.G Academy (sob CubeShackles Global)</li>
+                                <li>Sango Trust</li>
+                                <li>BIU.G Academy</li>
                             </ul>
                         </div>
                     </div>
