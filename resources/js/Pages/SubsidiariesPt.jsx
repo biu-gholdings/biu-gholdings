@@ -64,25 +64,25 @@ const clusters = [
         title: 'Cluster FGM / FGMS & Investimento',
         items: [
             {
-                name: 'FGM Capital, Lda. (Portugal)',
+                name: 'FGM Capital, Lda. (Angola)',
                 type: 'Trading & Capital',
-                status: 'Ativo',
+                status: 'Planeado / Em Estruturação',
                 description:
-                    'Entidade de trading e capital do grupo na estrutura de holdings Biu-g.',
+                    'Entidade de trading e mercados de capitais focada em estratégias proprietárias, formação de capital, operações de tesouraria e atividades de estruturação financeira de longo prazo em Angola e mercados africanos.',
             },
             {
                 name: 'Grupo FGMS & Associados, Lda. (Angola)',
                 type: 'Plataforma Financeira Integrada',
-                status: 'Ativo',
+                status: 'Planeado / Em Estruturação',
                 description:
-                    'Plataforma financeira integrada para Angola na estrutura do grupo Biu-g.',
+                    'Plataforma financeira integrada desenhada para suportar operações de capital multi-estratégia, estruturação de investimento, coordenação de tesouraria e desenvolvimento institucional de longo prazo em Angola.',
             },
             {
                 name: 'Biu-g Investment Management, Lda. (Angola)',
                 type: 'Gestão de Ativos',
-                status: 'Planeado',
+                status: 'Planeado / Em Estruturação',
                 description:
-                    'Veículo de gestão de ativos denominado em AOA planead, sujeito à regulamentação local aplicável.',
+                    'Plataforma de gestão de ativos focada em AOA, desenhada para operar veículos de investimento dedicados em mercados públicos, sectores estratégicos e iniciativas de desenvolvimento de capital nacional de longo prazo.',
             },
             {
                 name: '1975 Nzila, Lda. (Angola)',

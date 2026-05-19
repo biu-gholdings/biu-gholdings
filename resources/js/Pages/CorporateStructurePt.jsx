@@ -144,27 +144,30 @@ export default function CorporateStructurePt() {
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">4. Grupo FGM / FGMS — Investimento &amp; Finanças</h2>
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">FGM Capital, Lda. (Portugal)</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">FGM Capital, Lda. (Angola)</h3>
+                            <p className="text-[11px] text-zinc-500">Planeado / Em Estruturação</p>
                             <p className="text-sm text-zinc-600">
-                                Entidade original de trading e capital. Suporta a estratégia de mercados financeiros e
-                                operações iniciais do grupo.
+                                Entidade de trading e mercados de capitais focada em estratégias proprietárias, formação de
+                                capital, operações de tesouraria e atividades de estruturação financeira de longo prazo em
+                                Angola e mercados africanos.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Grupo FGMS &amp; Associados, Lda. (Angola)</h3>
+                            <p className="text-[11px] text-zinc-500">Planeado / Em Estruturação</p>
                             <p className="text-sm text-zinc-600">
-                                Plataforma financeira integrada para Angola, com mandatos institucionais multi-estratégia e
-                                capacidade para operações de escala nacional.
-                            </p>
-                            <p className="text-sm text-zinc-600">
-                                O capital é detido através de veículos de participação Biu-g em Portugal e Angola.
+                                Plataforma financeira integrada desenhada para suportar operações de capital
+                                multi-estratégia, estruturação de investimento, coordenação de tesouraria e desenvolvimento
+                                institucional de longo prazo em Angola.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Biu-g Investment Management, Lda. (Angola)</h3>
+                            <p className="text-[11px] text-zinc-500">Planeado / Em Estruturação</p>
                             <p className="text-sm text-zinc-600">
-                                Veículo de gestão de ativos denominado em AOA, focado na economia angolana e na gestão de
-                                risco institucional, sob a regulamentação local aplicável.
+                                Plataforma de gestão de ativos focada em AOA, desenhada para operar veículos de investimento
+                                dedicados em mercados públicos, sectores estratégicos e iniciativas de desenvolvimento de
+                                capital nacional de longo prazo.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
@@ -290,7 +293,7 @@ export default function CorporateStructurePt() {
                             <ul className="list-inside list-disc space-y-1 text-xs text-zinc-600">
                                 <li>CubeShackles, Inc. (EUA)</li>
                                 <li>CubeShackles, S.A. (Angola)</li>
-                                <li>FGM Capital, Lda. (Portugal)</li>
+                                <li>FGM Capital, Lda. (Angola)</li>
                                 <li>Grupo FGMS &amp; Associados, Lda. (Angola)</li>
                                 <li>Biu-g Investment Management, Lda. (Angola)</li>
                                 <li>Mucho Dinero Tecnologia &amp; Produção (Angola)</li>

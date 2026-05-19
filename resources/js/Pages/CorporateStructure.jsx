@@ -146,27 +146,30 @@ export default function CorporateStructure() {
                     </h2>
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">FGM Capital, Lda. (Portugal)</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">FGM Capital, Lda. (Angola)</h3>
+                            <p className="text-[11px] text-zinc-500">Planned / In Formation</p>
                             <p className="text-sm text-zinc-600">
-                                Original trading and capital entity for the group. Supports core capital markets strategy
-                                and early-stage operations.
+                                Trading and capital markets entity focused on proprietary strategies, capital formation,
+                                treasury operations and long-term financial structuring activities across Angola and African
+                                markets.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Grupo FGMS &amp; Associados, Lda. (Angola)</h3>
+                            <p className="text-[11px] text-zinc-500">Planned / In Formation</p>
                             <p className="text-sm text-zinc-600">
-                                Integrated financial platform for Angola, supporting multi-strategy institutional mandates
-                                and national-scale transactions.
-                            </p>
-                            <p className="text-sm text-zinc-600">
-                                Equity is held through Biu-g participation vehicles in Portugal and Angola.
+                                Integrated financial platform designed to support multi-strategy capital operations,
+                                investment structuring, treasury coordination and long-term institutional development across
+                                Angola.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                             <h3 className="text-lg font-semibold text-zinc-900">Biu-g Investment Management, Lda. (Angola)</h3>
+                            <p className="text-[11px] text-zinc-500">Planned / In Formation</p>
                             <p className="text-sm text-zinc-600">
-                                AOA-denominated asset management vehicle focused on Angolan assets and institutional risk
-                                management, operating under applicable local regulation.
+                                AOA-focused asset management platform designed to operate dedicated investment vehicles
+                                across public markets, strategic sectors and long-term national capital development
+                                initiatives.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
@@ -297,7 +300,7 @@ export default function CorporateStructure() {
                             <ul className="list-inside list-disc space-y-1 text-xs text-zinc-600">
                                 <li>CubeShackles, Inc. (USA)</li>
                                 <li>CubeShackles, S.A. (Angola)</li>
-                                <li>FGM Capital, Lda. (Portugal)</li>
+                                <li>FGM Capital, Lda. (Angola)</li>
                                 <li>Grupo FGMS &amp; Associados, Lda. (Angola)</li>
                                 <li>Biu-g Investment Management, Lda. (Angola)</li>
                                 <li>Mucho Dinero Tecnologia &amp; Mucho Dinero Produção, Lda. (Angola)</li>

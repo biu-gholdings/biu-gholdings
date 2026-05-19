@@ -39,8 +39,8 @@ export default function Contact() {
                         <div className="text-sm text-zinc-700">
                             <p className="font-semibold text-zinc-900">Jurisdictions</p>
                             <p className="text-zinc-700">
-                                United States (Biu-g Holdings LLC) · Portugal (Biu-g SGPS, FGM Capital) · Angola
-                                (CubeShackles, FGMS, Mucho Dinero, and affiliated platforms)
+                                United States (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM
+                                Capital, FGMS, Mucho Dinero, and affiliated platforms)
                             </p>
                         </div>
                         <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">
