@@ -31,16 +31,10 @@ export default function Contact() {
                             </a>
                         </div>
                         <div className="border-t border-zinc-100 pt-4 text-sm text-zinc-700">
-                            <p className="font-semibold text-zinc-900">Phone</p>
-                            <p className="text-zinc-700">
-                                Group line: <span className="font-medium">+1 (484) 975-3938</span>
-                            </p>
-                        </div>
-                        <div className="text-sm text-zinc-700">
                             <p className="font-semibold text-zinc-900">Jurisdictions</p>
                             <p className="text-zinc-700">
                                 United States (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM
-                                Capital, FGMS, and affiliated platforms)
+                                Capital, FGMS, BIU.G Academy, and future subsidiaries)
                             </p>
                         </div>
                         <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">

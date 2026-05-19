@@ -31,16 +31,10 @@ export default function ContactPt() {
                             </a>
                         </div>
                         <div className="border-t border-zinc-100 pt-4 text-sm text-zinc-700">
-                            <p className="font-semibold text-zinc-900">Telefone</p>
-                            <p className="text-zinc-700">
-                                Linha do grupo: <span className="font-medium">+1 (484) 975-3938</span>
-                            </p>
-                        </div>
-                        <div className="text-sm text-zinc-700">
                             <p className="font-semibold text-zinc-900">Jurisdições</p>
                             <p className="text-zinc-700">
                                 Estados Unidos (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM
-                                Capital, FGMS e plataformas afiliadas)
+                                Capital, FGMS, BIU.G Academy e futuras subsidiárias)
                             </p>
                         </div>
                         <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">
