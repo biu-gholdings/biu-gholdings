@@ -108,25 +108,6 @@ const clusters = [
         ],
     },
     {
-        title: 'Mucho Dinero Group – Media & Technology Talent',
-        items: [
-            {
-                name: 'Mucho Dinero Tecnologia, Lda. (Angola)',
-                type: 'Technology & Innovation',
-                status: 'Active',
-                description:
-                    'Technology subsidiary focused on innovation and national talent development within the group.',
-            },
-            {
-                name: 'Mucho Dinero Produção, Lda. (Angola)',
-                type: 'Media & Production',
-                status: 'Active',
-                description:
-                    'Media and production company for group brands and national communication initiatives.',
-            },
-        ],
-    },
-    {
         title: 'Fiduciary & Education',
         items: [
             {

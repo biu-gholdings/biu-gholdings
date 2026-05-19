@@ -40,7 +40,7 @@ export default function ContactPt() {
                             <p className="font-semibold text-zinc-900">Jurisdições</p>
                             <p className="text-zinc-700">
                                 Estados Unidos (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM
-                                Capital, FGMS, Mucho Dinero e plataformas afiliadas)
+                                Capital, FGMS e plataformas afiliadas)
                             </p>
                         </div>
                         <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">

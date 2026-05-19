@@ -197,29 +197,7 @@ export default function CorporateStructure() {
                 </section>
 
                 <section className="space-y-4">
-                    <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">
-                        5. Mucho Dinero Group — Media &amp; Technology Talent
-                    </h2>
-                    <div className="grid gap-4 md:grid-cols-2">
-                        <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">Mucho Dinero Tecnologia, Lda. (Angola)</h3>
-                            <p className="text-sm text-zinc-600">
-                                Innovation and national talent-development arm. Supports CubeShackles, the Angola National
-                                Wallet, PraçaNgola, and national transit systems.
-                            </p>
-                        </div>
-                        <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">Mucho Dinero Produção, Lda. (Angola)</h3>
-                            <p className="text-sm text-zinc-600">
-                                Media, campaigns, and advertising production entity for all ecosystem brands and
-                                national-scale communication initiatives.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="space-y-4">
-                    <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">6. Trusts &amp; Fiduciary Vehicles</h2>
+                    <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">5. Trusts &amp; Fiduciary Vehicles</h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <h3 className="text-lg font-semibold text-zinc-900">Fundo Fiduciário Estratégico (Angola) — Planned</h3>
                         <p className="text-sm text-zinc-600">
@@ -243,7 +221,7 @@ export default function CorporateStructure() {
 
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">
-                        7. Education &amp; National Capacity Building
+                        6. Education &amp; National Capacity Building
                     </h2>
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
                         <h3 className="text-lg font-semibold text-zinc-900">BIU.G Academy</h3>
@@ -261,7 +239,7 @@ export default function CorporateStructure() {
 
                 <section className="space-y-4">
                     <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">
-                        8. Additional Products &amp; Future Legal Entities
+                        7. Additional Products &amp; Future Legal Entities
                     </h2>
                     <p className="text-sm text-zinc-600">
                         The following platforms are part of the group portfolio and may be organized as standalone
@@ -303,7 +281,6 @@ export default function CorporateStructure() {
                                 <li>FGM Capital, Lda. (Angola)</li>
                                 <li>Grupo FGMS &amp; Associados, Lda. (Angola)</li>
                                 <li>Biu-g Investment Management, Lda. (Angola)</li>
-                                <li>Mucho Dinero Tecnologia &amp; Mucho Dinero Produção, Lda. (Angola)</li>
                                 <li>
                                     National Data Platform, Kulifikila, PraçaNgola, Angola National Transit Platform,
                                     BualaBuitu Terminal (platforms inside CubeShackles, S.A.); 1975 Nzila, FGMS &amp; Co,
