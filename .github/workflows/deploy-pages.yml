@@ -59,13 +59,16 @@ jobs:
           fi
 
       - name: Publish to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist-pages-publish
-          publish_branch: gh-pages
-          force_orphan: true
-          commit_message: 'Deploy public corporate site [skip ci]'
+        run: |
+          cd dist-pages-publish
+          git init -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Deploy public corporate site [skip ci]"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   verify-gh-pages:
     name: Verify gh-pages branch
