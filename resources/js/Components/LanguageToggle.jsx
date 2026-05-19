@@ -13,6 +13,8 @@ const PAGE_LOCALE_ROUTE_MAP = {
     SubsidiariesPt: { en: 'subsidiaries', pt: 'subsidiaries.pt' },
     Contact: { en: 'contact', pt: 'contact.pt' },
     ContactPt: { en: 'contact', pt: 'contact.pt' },
+    ContactThankYou: { en: 'contact.thankyou', pt: 'contact.thankyou.pt' },
+    ContactThankYouPt: { en: 'contact.thankyou', pt: 'contact.thankyou.pt' },
     InvestorRelations: { en: 'investor.relations', pt: 'investor.relations.pt' },
     InvestorRelationsPt: { en: 'investor.relations', pt: 'investor.relations.pt' },
     InvestorRelationsThankYou: { en: 'investor.relations.thankyou', pt: 'investor.relations.thankyou.pt' },

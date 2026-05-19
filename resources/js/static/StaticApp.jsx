@@ -3,6 +3,8 @@ import About from '@/Pages/About';
 import AboutPt from '@/Pages/AboutPt';
 import Contact from '@/Pages/Contact';
 import ContactPt from '@/Pages/ContactPt';
+import ContactThankYou from '@/Pages/ContactThankYou';
+import ContactThankYouPt from '@/Pages/ContactThankYouPt';
 import CorporateStructure from '@/Pages/CorporateStructure';
 import CorporateStructurePt from '@/Pages/CorporateStructurePt';
 import Home from '@/Pages/Home';
@@ -34,6 +36,8 @@ const staticRoutes = [
     { path: routePaths['investor.relations.thankyou.pt'], element: <InvestorRelationsThankYouPt /> },
     { path: routePaths.contact, element: <Contact /> },
     { path: routePaths['contact.pt'], element: <ContactPt /> },
+    { path: routePaths['contact.thankyou'], element: <ContactThankYou /> },
+    { path: routePaths['contact.thankyou.pt'], element: <ContactThankYouPt /> },
 ];
 
 export default function StaticApp() {

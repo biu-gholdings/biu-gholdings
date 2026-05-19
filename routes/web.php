@@ -19,7 +19,9 @@ Route::get('/subsidiaries', fn () => Inertia::render('Subsidiaries'))->name('sub
 Route::get('/subsidiarias', fn () => Inertia::render('SubsidiariesPt'))->name('subsidiaries.pt');
 
 Route::get('/contact', fn () => Inertia::render('Contact'))->name('contact');
+Route::get('/contact/thank-you', fn () => Inertia::render('ContactThankYou'))->name('contact.thankyou');
 Route::get('/contacto', fn () => Inertia::render('ContactPt'))->name('contact.pt');
+Route::get('/contacto/obrigado', fn () => Inertia::render('ContactThankYouPt'))->name('contact.thankyou.pt');
 
 Route::get('/investor-relations', fn () => Inertia::render('InvestorRelations'))->name('investor.relations');
 Route::get('/investor-relations/thank-you', fn () => Inertia::render('InvestorRelationsThankYou'))->name('investor.relations.thankyou');

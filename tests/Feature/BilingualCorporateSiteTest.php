@@ -29,7 +29,9 @@ class BilingualCorporateSiteTest extends TestCase
             'investor relations pt' => ['/relacoes-com-investidores', 'InvestorRelationsPt'],
             'investor relations thank you pt' => ['/relacoes-com-investidores/obrigado', 'InvestorRelationsThankYouPt'],
             'contact en' => ['/contact', 'Contact'],
+            'contact thank you en' => ['/contact/thank-you', 'ContactThankYou'],
             'contact pt' => ['/contacto', 'ContactPt'],
+            'contact thank you pt' => ['/contacto/obrigado', 'ContactThankYouPt'],
         ];
     }
 
@@ -59,7 +61,9 @@ class BilingualCorporateSiteTest extends TestCase
             'investor.relations.pt',
             'investor.relations.thankyou.pt',
             'contact',
+            'contact.thankyou',
             'contact.pt',
+            'contact.thankyou.pt',
         ];
 
         foreach ($routeNames as $name) {

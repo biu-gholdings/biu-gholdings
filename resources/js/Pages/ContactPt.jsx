@@ -1,3 +1,4 @@
+import ContactInquiryForm from '@/Components/ContactInquiryForm';
 import MainLayout from '@/Layouts/MainLayout';
 
 export default function ContactPt() {
@@ -15,33 +16,15 @@ export default function ContactPt() {
 
                 <section className="space-y-4">
                     <h2 className="text-lg font-semibold text-zinc-900 md:text-xl">Contacto Corporativo &amp; Institucional</h2>
-                    <article className="space-y-4 rounded-lg border border-zinc-200 bg-white p-4 md:p-6">
-                        <p className="text-sm leading-relaxed text-zinc-600">
-                            Reguladores, partes institucionais qualificadas, media e stakeholders corporativos podem
-                            contactar a Biu-g Holdings LLC por email. Inclua a sua organização, jurisdição e assunto do
-                            pedido.
-                        </p>
-                        <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">Email</p>
-                            <a
-                                href="mailto:support@biu-gholdings.org"
-                                className="mt-1 inline-block text-sm font-medium text-zinc-900 underline"
-                            >
-                                support@biu-gholdings.org
-                            </a>
-                        </div>
-                        <div className="border-t border-zinc-100 pt-4 text-sm text-zinc-700">
-                            <p className="font-semibold text-zinc-900">Jurisdições</p>
-                            <p className="text-zinc-700">
-                                Estados Unidos (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM
-                                Capital, FGMS, BIU.G Academy e futuras subsidiárias)
-                            </p>
-                        </div>
-                        <p className="border-t border-zinc-100 pt-4 text-[11px] leading-relaxed text-zinc-500">
-                            Este website não constitui uma oferta de venda, solicitação de compra ou recomendação
-                            relativamente a quaisquer valores mobiliários, tokens, fundos ou produtos de investimento.
-                        </p>
-                    </article>
+                    <ContactInquiryForm locale="pt" />
+                </section>
+
+                <section className="rounded-lg border border-zinc-200 bg-white p-4 text-sm text-zinc-700 md:p-5">
+                    <p className="font-semibold text-zinc-900">Jurisdições</p>
+                    <p className="mt-2 text-zinc-700">
+                        Estados Unidos (Biu-g Holdings LLC) · Portugal (Biu-g SGPS) · Angola (CubeShackles, FGM Capital,
+                        FGMS, BIU.G Academy e futuras subsidiárias)
+                    </p>
                 </section>
             </div>
         </MainLayout>

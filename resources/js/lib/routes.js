@@ -19,6 +19,8 @@ export const routePaths = {
     'investor.relations.thankyou.pt': '/relacoes-com-investidores/obrigado',
     contact: '/contact',
     'contact.pt': '/contacto',
+    'contact.thankyou': '/contact/thank-you',
+    'contact.thankyou.pt': '/contacto/obrigado',
 };
 
 export const pathToComponent = {
@@ -37,12 +39,14 @@ export const pathToComponent = {
     '/relacoes-com-investidores': 'InvestorRelationsPt',
     '/relacoes-com-investidores/obrigado': 'InvestorRelationsThankYouPt',
     '/contact': 'Contact',
+    '/contact/thank-you': 'ContactThankYou',
     '/contacto': 'ContactPt',
+    '/contacto/obrigado': 'ContactThankYouPt',
 };
 
 export function url(routeName) {
     return routePaths[routeName] ?? '/';
 }
 
-/** All public URLs included in the GitHub Pages static export (16 pages). */
+/** All public URLs included in the GitHub Pages static export (18 pages). */
 export const allPublicPaths = Object.values(routePaths);
