@@ -19,39 +19,44 @@ const clusters = [
                     'Sociedade operacional focada em Angola, destinada a localizar a infraestrutura CubeShackles para casos de uso nacionais, alinhamento regulatório e futuras parcerias institucionais, sujeitas às aprovações aplicáveis.',
             },
             {
-                name: 'National Data Platform, Lda. (Angola)',
+                name: 'National Data Platform',
+                platform: 'Plataforma dentro da CubeShackles, S.A.',
                 type: 'Plataforma de Dados',
-                status: 'Planeado',
+                status: 'Produto (Spin-out Opcional)',
                 description:
-                    'Entidade planead para dados económicos e sociais — inflação, desemprego, mercados informais, índices de preços e métricas de acesso.',
+                    'Plataforma de dados económicos e sociais — inflação, desemprego, mercados informais, índices de preços e métricas de acesso.',
             },
             {
-                name: 'Kulifikila Credit Bureau, Lda. (Angola)',
-                type: 'Infraestrutura de Crédito',
-                status: 'Planeado',
+                name: 'Kulifikila',
+                platform: 'Plataforma dentro da CubeShackles, S.A.',
+                type: 'Plataforma de Inteligência de Crédito',
+                status: 'Produto (Spin-out Opcional)',
                 description:
-                    'Infraestrutura de crédito planead para sectores formal e informal, com scoring multi-camada em AOA.',
+                    'Inteligência de crédito para sectores formal e informal, com scoring multi-camada em AOA e inteligência de risco.',
             },
             {
-                name: 'Plataforma Nacional de Transporte de Angola',
+                name: 'Angola National Transit Platform',
+                platform: 'Plataforma dentro da CubeShackles, S.A.',
                 type: 'Mobilidade & Transporte',
-                status: 'Planeado',
+                status: 'Produto (Spin-out Opcional)',
                 description:
-                    'Aplicação nacional de transporte planead (motoristas e passageiros), com rails de pagamento e fiscais em desenvolvimento no grupo.',
+                    'Aplicação nacional de mobilidade para motoristas e passageiros, com rails de pagamento e fiscais integrados.',
             },
             {
-                name: 'PraçaNgola, Lda. (Angola)',
+                name: 'PraçaNgola',
+                platform: 'Plataforma dentro da CubeShackles, S.A.',
                 type: 'Infraestrutura de E-commerce',
-                status: 'Planeado',
+                status: 'Produto (Spin-out Opcional)',
                 description:
-                    'Infraestrutura nacional de e-commerce e logística planead na estrutura do grupo CubeShackles.',
+                    'Plataforma nacional de e-commerce e logística para Angola e escala regional.',
             },
             {
-                name: 'Terminal BualaBuitu',
-                type: 'Plataforma / Produto',
-                status: 'Em Desenvolvimento',
+                name: 'BualaBuitu Terminal',
+                platform: 'Plataforma dentro da CubeShackles, S.A.',
+                type: 'Plataforma de Inteligência de Mercado',
+                status: 'Produto (Spin-out Opcional)',
                 description:
-                    'Terminal de inteligência de mercado financeiro desenvolvido como produto de plataforma no grupo CubeShackles.',
+                    'Terminal de inteligência de mercado financeiro para dados em tempo real, análises e infraestrutura de mercado.',
             },
         ],
     },
@@ -179,6 +184,9 @@ export default function SubsidiariesPt() {
                                 >
                                     <div className="space-y-1">
                                         <h3 className="text-sm font-semibold text-zinc-900">{item.name}</h3>
+                                        {item.platform && (
+                                            <p className="text-[11px] font-medium text-zinc-500">{item.platform}</p>
+                                        )}
                                         <p className="text-[11px] font-medium text-zinc-700">{item.type}</p>
                                         <p className="text-[11px] text-zinc-500">
                                             Estado: <span className="font-medium">{item.status}</span>

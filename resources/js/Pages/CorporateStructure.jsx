@@ -95,39 +95,47 @@ export default function CorporateStructure() {
 
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">National Data Platform, Lda. (Angola) — Planned</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">National Data Platform</h3>
+                            <p className="text-xs font-medium text-zinc-500">Platform inside CubeShackles, S.A.</p>
+                            <p className="text-[11px] text-zinc-500">Product (Spin-out Optional)</p>
                             <p className="text-sm text-zinc-600">
-                                Planned entity for economic and social data — inflation, unemployment, informal markets,
-                                and pricing indices — within the CubeShackles group structure.
+                                Economic and social data platform — inflation, unemployment, informal markets, local price
+                                indices, and access metrics.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">Kulifikila Credit Bureau, Lda. (Angola) — Planned</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">Kulifikila</h3>
+                            <p className="text-xs font-medium text-zinc-500">Platform inside CubeShackles, S.A.</p>
+                            <p className="text-[11px] text-zinc-500">Product (Spin-out Optional)</p>
                             <p className="text-sm text-zinc-600">
-                                Planned credit infrastructure for formal and informal sectors, with multi-layer AOA credit
-                                scoring rails.
+                                Credit intelligence platform for formal and informal sectors, with multi-layer AOA credit
+                                scoring and risk intelligence.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">Angola National Transit Platform — Planned</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">Angola National Transit Platform</h3>
+                            <p className="text-xs font-medium text-zinc-500">Platform inside CubeShackles, S.A.</p>
+                            <p className="text-[11px] text-zinc-500">Product (Spin-out Optional)</p>
                             <p className="text-sm text-zinc-600">
-                                Planned national transit application for drivers and riders, integrated with group payment
-                                and tax rails under development.
+                                National mobility application for drivers and riders, with integrated payment and tax rails.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                            <h3 className="text-lg font-semibold text-zinc-900">PraçaNgola, Lda. (Angola) — Planned</h3>
+                            <h3 className="text-lg font-semibold text-zinc-900">PraçaNgola</h3>
+                            <p className="text-xs font-medium text-zinc-500">Platform inside CubeShackles, S.A.</p>
+                            <p className="text-[11px] text-zinc-500">Product (Spin-out Optional)</p>
                             <p className="text-sm text-zinc-600">
-                                Planned national e-commerce infrastructure within the CubeShackles group structure.
+                                National e-commerce and logistics platform for Angola and regional scale.
                             </p>
                         </div>
                     </div>
 
                     <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
-                        <h3 className="text-lg font-semibold text-zinc-900">BualaBuitu Terminal — Platform / Product</h3>
+                        <h3 className="text-lg font-semibold text-zinc-900">BualaBuitu Terminal</h3>
+                        <p className="text-xs font-medium text-zinc-500">Platform inside CubeShackles, S.A.</p>
+                        <p className="text-[11px] text-zinc-500">Product (Spin-out Optional)</p>
                         <p className="text-sm text-zinc-600">
-                            Financial market intelligence terminal developed as a platform product within the CubeShackles
-                            group, with optional future legal entity formation.
+                            Financial market intelligence terminal for real-time data, analytics, and market infrastructure.
                         </p>
                     </div>
                 </section>
@@ -265,7 +273,7 @@ export default function CorporateStructure() {
                         <li>
                             Angola National Wallet (planned national wallet system within the CubeShackles group structure)
                         </li>
-                        <li>BualaBuitu Terminal Angola (financial terminal product within CubeShackles, S.A.)</li>
+                        <li>BualaBuitu Terminal (platform inside CubeShackles, S.A.)</li>
                     </ul>
                 </section>
 
@@ -294,8 +302,9 @@ export default function CorporateStructure() {
                                 <li>Biu-g Investment Management, Lda. (Angola)</li>
                                 <li>Mucho Dinero Tecnologia &amp; Mucho Dinero Produção, Lda. (Angola)</li>
                                 <li>
-                                    National Data Platform, Kulifikila, PraçaNgola, Angola National Transit Platform
-                                    (planned); 1975 Nzila, FGMS &amp; Co, FGM &amp; Co (planned)
+                                    National Data Platform, Kulifikila, PraçaNgola, Angola National Transit Platform,
+                                    BualaBuitu Terminal (platforms inside CubeShackles, S.A.); 1975 Nzila, FGMS &amp; Co,
+                                    FGM &amp; Co (planned)
                                 </li>
                             </ul>
                         </div>

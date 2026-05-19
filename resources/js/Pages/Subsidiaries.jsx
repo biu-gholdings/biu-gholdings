@@ -19,39 +19,44 @@ const clusters = [
                     'Angola-focused operating company intended to localize CubeShackles infrastructure for national use cases, regulatory alignment, and future institutional partnerships, subject to applicable approvals.',
             },
             {
-                name: 'National Data Platform, Lda. (Angola)',
+                name: 'National Data Platform',
+                platform: 'Platform inside CubeShackles, S.A.',
                 type: 'Data Platform',
-                status: 'Planned',
+                status: 'Product (Spin-out Optional)',
                 description:
-                    'Planned entity for economic and social data — inflation, unemployment, informal markets, local price indices and access metrics.',
+                    'Economic and social data platform — inflation, unemployment, informal markets, local price indices and access metrics.',
             },
             {
-                name: 'Kulifikila Credit Bureau, Lda. (Angola)',
-                type: 'Credit Infrastructure',
-                status: 'Planned',
+                name: 'Kulifikila',
+                platform: 'Platform inside CubeShackles, S.A.',
+                type: 'Credit Intelligence Platform',
+                status: 'Product (Spin-out Optional)',
                 description:
-                    'Planned credit infrastructure for formal and informal sectors, with multi-layer AOA credit scoring and risk intelligence.',
+                    'Credit intelligence for formal and informal sectors, with multi-layer AOA credit scoring and risk intelligence.',
             },
             {
                 name: 'Angola National Transit Platform',
+                platform: 'Platform inside CubeShackles, S.A.',
                 type: 'Mobility / Transit',
-                status: 'Planned',
+                status: 'Product (Spin-out Optional)',
                 description:
-                    'Planned national transit application for drivers and riders, with group payment and tax rails under development.',
+                    'National mobility application for drivers and riders, with integrated payment and tax rails.',
             },
             {
-                name: 'PraçaNgola, Lda. (Angola)',
+                name: 'PraçaNgola',
+                platform: 'Platform inside CubeShackles, S.A.',
                 type: 'E-commerce Infrastructure',
-                status: 'Planned',
+                status: 'Product (Spin-out Optional)',
                 description:
-                    'Planned national e-commerce and logistics infrastructure within the CubeShackles group structure.',
+                    'National e-commerce and logistics platform for Angola and regional scale.',
             },
             {
                 name: 'BualaBuitu Terminal',
-                type: 'Platform / Product',
-                status: 'In Development',
+                platform: 'Platform inside CubeShackles, S.A.',
+                type: 'Market Intelligence Platform',
+                status: 'Product (Spin-out Optional)',
                 description:
-                    'Financial market intelligence terminal developed as a platform product within the CubeShackles group.',
+                    'Financial market intelligence terminal for real-time data, analytics, and market infrastructure.',
             },
         ],
     },
@@ -178,6 +183,9 @@ export default function Subsidiaries() {
                                 >
                                     <div className="space-y-1">
                                         <h3 className="text-sm font-semibold text-zinc-900">{item.name}</h3>
+                                        {item.platform && (
+                                            <p className="text-[11px] font-medium text-zinc-500">{item.platform}</p>
+                                        )}
                                         <p className="text-[11px] font-medium text-zinc-700">{item.type}</p>
                                         <p className="text-[11px] text-zinc-500">
                                             Status: <span className="font-medium">{item.status}</span>
