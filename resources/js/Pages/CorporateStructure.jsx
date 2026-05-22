@@ -169,9 +169,9 @@ export default function CorporateStructure() {
                             <h3 className="text-lg font-semibold text-zinc-900">Biu-g Investment Management, Lda. (Angola)</h3>
                             <p className="text-[11px] text-zinc-500">Planned / In Formation</p>
                             <p className="text-sm text-zinc-600">
-                                AOA-focused asset management platform designed to operate dedicated investment vehicles
-                                across public markets, strategic sectors and long-term national capital development
-                                initiatives.
+                                AOA-focused asset management platform structured to operate 15 dedicated investment funds,
+                                each capitalized with 100 million AOA, focused on public markets, strategic sectors and
+                                long-duration national capital development.
                             </p>
                         </div>
                         <div className="space-y-2 rounded-lg border border-zinc-200 bg-white p-4 md:p-5">
